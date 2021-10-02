@@ -1,2 +1,4 @@
 [package]
-authors = ["Alexandre Bury <alexandre
+authors = ["Alexandre Bury <alexandre.bury@gmail.com>"]
+description = "A coinche server"
+license =
