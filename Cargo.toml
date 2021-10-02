@@ -3,4 +3,9 @@ authors = ["Alexandre Bury <alexandre.bury@gmail.com>"]
 description = "A coinche server"
 license = "MIT"
 name = "coinched"
-repository = "https://github.com/Gysco
+repository = "https://github.com/Gyscos/coinched"
+version = "0.1.0"
+
+[[bin]]
+doc = false
+name =
