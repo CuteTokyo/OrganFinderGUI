@@ -5,4 +5,5 @@ Currently working on:
 
 TODO:
 
-* Prope
+* Proper http API description
+* Debug admin console for backend (C
