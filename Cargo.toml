@@ -14,4 +14,7 @@ name = "coinched"
 doc = false
 name = "coincher"
 
-[dependenc
+[dependencies]
+bodyparser = "0.0.6"
+clap = "1.5.5"
+env_logger 
