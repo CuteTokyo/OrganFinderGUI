@@ -6,4 +6,6 @@ Currently working on:
 TODO:
 
 * Proper http API description
-* Debug admin console for backend (C
+* Debug admin console for backend (CLI from the server? Or local http interface?)
+* HTML5 UI
+* Wait 
