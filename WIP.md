@@ -11,4 +11,4 @@ TODO:
 * Wait event range/batch
 * Canceled JOIN requests in API
 * Handle Timeouts in API
-* 
+* AI (in the client? server?)
