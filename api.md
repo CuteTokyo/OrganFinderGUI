@@ -33,3 +33,62 @@ Attempt to join a new game. Will block until a party is found.
           "player_id": 123456,
           "player_pos": 2
         }
+
+# Group General
+These methods require a Player ID. Use `/join` to get one.
+
+## GET /wait/{playerId}/{eventId}
+Wait for the next event.
+
++ Response 200 (application/json)
+
+        {
+          "id": 1,
+          "event": 0
+        }
+
+## POST /leave/{playerId}
+Leave the game. The playerID becomes invalid after this call.
+
++ Response 200 (application/json)
+
+        "ok"
+
+## GET /hand/{playerId}
+Returns the cards in hand for the given player, as a 32-bitset.
+
++ Response 200 (application/json)
+
+        3
+
+## GET /scores/{playerId}
+Returns the scores for both teams.
+
++ Response 200 (application/json)
+
+        [0, 0]
+
+# Group Auction
+These methods require a Player ID. They are only available during auction.
+
+## POST /pass/{playerId}
+Pass one's turn during auction.
+
++ Response 200 (application/json)
+
+        {
+          "id": 0,
+          "event": {
+            "type": "FromPlayer",
+            "pos": 1,
+            "event": {
+              "type": "Passed"
+            }
+          }
+        }
+
+
+## POST /coinche/{playerId}
+Coinche (or sur-coinche) the current contract.
+
++ Response 200 (application/json)
