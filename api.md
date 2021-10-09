@@ -92,3 +92,65 @@ Pass one's turn during auction.
 Coinche (or sur-coinche) the current contract.
 
 + Response 200 (application/json)
+
+        {
+          "id": 1,
+          "event": {
+            "type": "FromPlayer",
+            "pos": 1,
+            "event": {
+              "type": "Coinched"
+            }
+          }
+        }
+
+# Group Game
+These methods require a Player ID. They are only available during card play, after auction.
+
+## GET /trick/{playerId}
+Returns the current trick.
+
++ Response 200 (application/json)
+
+        {
+          "first": 1,
+          "winner": 2,
+          "cards": [ "None", "None", "None", "None" ]
+        }
+
+## GET /last_trick/{playerId}
+Returns the last complete trick.
+
++ Response 200 (application/json)
+
+
+        {
+          "first": 1,
+          "winner": 2,
+          "cards": [ "None", "None", "None", "None" ]
+        }
+
+## POST /bid/{playerId}
++ Request (application/json)
+
+        {
+          "target": "80",
+          "suit": 1
+        }
+
++ Response 200 (application/json)
+
+        {
+          "id": 1,
+          "event": {
+            "type": "FromPlayer",
+            "pos": 1,
+            "event": {
+              "type": "Bidded",
+              "target": "80",
+              "suit": 1
+            }
+          }
+        }
+
+## POST /play/{playerId}
