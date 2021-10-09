@@ -5,4 +5,7 @@ extern crate env_logger;
 extern crate log;
 
 use std::str::FromStr;
-use
+use clap::{Arg, App};
+
+fn main() {
+    env_logger::init().unwra
