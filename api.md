@@ -154,3 +154,22 @@ Returns the last complete trick.
         }
 
 ## POST /play/{playerId}
++ Request (application/json)
+
+        {
+          "card": 64
+        }
+
++ Response 200 (application/json)
+
+        {
+          "id": 2,
+          "event": {
+            "type": "FromPlayer",
+            "pos": 1,
+            "event": {
+              "type": "CardPlayed",
+              "card": 64
+            }
+          }
+        }
