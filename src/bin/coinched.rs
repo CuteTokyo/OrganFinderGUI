@@ -8,4 +8,7 @@ use std::str::FromStr;
 use clap::{Arg, App};
 
 fn main() {
-    env_logger::init().unwra
+    env_logger::init().unwrap();
+
+    let matches = App::new("coinched")
+            
