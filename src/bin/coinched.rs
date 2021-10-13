@@ -11,4 +11,5 @@ fn main() {
     env_logger::init().unwrap();
 
     let matches = App::new("coinched")
-            
+                      .version(env!("CARGO_PKG_VERSION"))
+   
