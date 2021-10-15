@@ -14,4 +14,5 @@ fn main() {
                       .version(env!("CARGO_PKG_VERSION"))
                       .author("Alexandre Bury <alexandre.bury@gmail.com>")
                       .about("A coinche server")
-        
+                      .arg(Arg::with_name("PORT")
+                 
