@@ -12,4 +12,4 @@ fn main() {
 
     let matches = App::new("coinched")
                       .version(env!("CARGO_PKG_VERSION"))
-   
+                      .author("Alexandre Bury <alexandre.bury@gmail.c
