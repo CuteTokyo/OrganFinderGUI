@@ -15,4 +15,5 @@ fn main() {
                       .author("Alexandre Bury <alexandre.bury@gmail.com>")
                       .about("A coinche server")
                       .arg(Arg::with_name("PORT")
-                 
+                               .help("Port to listen to (defaults to 3000)")
+       
