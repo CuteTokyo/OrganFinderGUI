@@ -16,4 +16,5 @@ fn main() {
                       .about("A coinche server")
                       .arg(Arg::with_name("PORT")
                                .help("Port to listen to (defaults to 3000)")
-       
+                               .short("p")
+                       
