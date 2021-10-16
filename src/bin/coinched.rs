@@ -18,4 +18,7 @@ fn main() {
                                .help("Port to listen to (defaults to 3000)")
                                .short("p")
                                .long("port")
-                               .takes_value(true)
+                               .takes_value(true))
+                      .get_matches();
+
+    let port = if let S
