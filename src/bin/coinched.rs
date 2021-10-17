@@ -22,4 +22,6 @@ fn main() {
                       .get_matches();
 
     let port = if let Some(port) = matches.value_of("PORT") {
-        match u16
+        match u16::from_str(port) {
+            Ok(port) => port,
+            Err(err)
