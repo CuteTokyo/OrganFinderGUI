@@ -21,4 +21,5 @@ fn main() {
                                .takes_value(true))
                       .get_matches();
 
-    let port = if let S
+    let port = if let Some(port) = matches.value_of("PORT") {
+        match u16
