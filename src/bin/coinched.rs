@@ -26,4 +26,7 @@ fn main() {
             Ok(port) => port,
             Err(err) => {
                 println!("Invalid port: `{}` ({})", port, err);
-    
+                std::process::exit(1);
+            }
+        }
+    } e
