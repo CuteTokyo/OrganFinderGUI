@@ -24,4 +24,6 @@ fn main() {
     let port = if let Some(port) = matches.value_of("PORT") {
         match u16::from_str(port) {
             Ok(port) => port,
-            Err(err)
+            Err(err) => {
+                println!("Invalid port: `{}` ({})", port, err);
+    
