@@ -33,4 +33,7 @@ fn main() {
         3000
     };
 
-    let server = coinched:
+    let server = coinched::server::http::Server::new(port);
+
+    server.run();
+}
