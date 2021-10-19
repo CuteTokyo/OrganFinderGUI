@@ -29,4 +29,8 @@ fn main() {
                 std::process::exit(1);
             }
         }
-    } e
+    } else {
+        3000
+    };
+
+    let server = coinched:
