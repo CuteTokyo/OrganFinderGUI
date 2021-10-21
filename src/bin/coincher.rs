@@ -129,3 +129,53 @@ impl client::Frontend<client::http::HttpBackend> for CliFrontend {
     }
 
     fn ask_bid(&mut self) -> client::AuctionAction {
+        loop {
+            println!("Your turn to bid. Commands:");
+            println!("* `leave`");
+            println!("* `pass`");
+            println!("* `coinche`");
+            println!("* [80, 90, ... , Capot] [H,C,D,S]");
+            print!("> ");
+            io::stdout().flush().unwrap();
+
+            let line = Self::input();
+
+            return match line.as_ref() {
+                // Those are easy actions
+                "leave" => client::AuctionAction::Leave,
+                "pass" => client::AuctionAction::Pass,
+                "coinche" => client::AuctionAction::Coinche,
+                line => {
+                    // Here we parse the bid
+                    let contract = match parse_bid(line) {
+                        Err(msg) => {
+                            println!("{}", msg);
+                            continue;
+                        }
+                        Ok(contract) => contract,
+                    };
+
+                    client::AuctionAction::Bid(contract)
+                }
+            };
+        }
+    }
+
+    /// Auction cancelled, back to the start.
+    fn auction_cancelled(&mut self) {
+        println!("Auction cancelled!");
+    }
+
+    /// Auction is complete, we can play now!
+    fn auction_over(&mut self, contract: &bid::Contract) {
+        println!("Auction is over: {:?}", contract);
+    }
+
+    fn start_game(&mut self, first: pos::PlayerPos, hand: cards::Hand) {
+        self.hand = hand;
+
+        self.print_hand();
+
+
+        println!("First player: {:?}", first);
+    }
