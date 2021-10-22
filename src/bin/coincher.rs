@@ -179,3 +179,25 @@ impl client::Frontend<client::http::HttpBackend> for CliFrontend {
 
         println!("First player: {:?}", first);
     }
+}
+
+fn main() {
+    let matches = App::new("coincher")
+                      .version(env!("CARGO_PKG_VERSION"))
+                      .author("Alexandre Bury <alexandre.bury@gmail.com>")
+                      .about("A client for coinched")
+                      .arg(Arg::with_name("HOST")
+                               .help("Specifies the host to connect to")
+                               .required(true)
+                               .index(1))
+                      .get_matches();
+    let host = matches.value_of("HOST").unwrap();
+
+    // TODO: allow reconnecting to an existing game
+
+    let backend = client::http::HttpBackend::join(host).unwrap();
+    let mut frontend = CliFrontend::new(backend.pos);
+
+    println!("Final score: {:?}",
+             client::Client::new(backend).run(&mut frontend));
+}
