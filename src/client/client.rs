@@ -16,4 +16,6 @@ enum GameError {
 impl<B: Backend> Client<B> {
     pub fn new(backend: B) -> Self {
         Client {
-       
+            scores: [0, 0],
+            backend: backend,
+     
