@@ -8,4 +8,10 @@ pub struct Client<B: Backend> {
 }
 
 enum GameError {
-  
+    NoContract,
+    PlayerLeft,
+}
+
+
+impl<B: Backend> Client<B> {
+   
