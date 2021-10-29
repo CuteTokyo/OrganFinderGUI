@@ -18,4 +18,7 @@ impl<B: Backend> Client<B> {
         Client {
             scores: [0, 0],
             backend: backend,
-     
+        }
+    }
+
+    pub fn run<F: Frontend<B>>(mut
