@@ -23,4 +23,5 @@ impl<B: Backend> Client<B> {
 
     pub fn run<F: Frontend<B>>(mut self, frontend: &mut F) -> [i32; 2] {
         loop {
-       
+            match self.backend.wait() {
+                Ok(EventType
