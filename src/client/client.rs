@@ -25,4 +25,5 @@ impl<B: Backend> Client<B> {
         loop {
             match self.backend.wait() {
                 Ok(EventType::NewGameRelative {first, hand}) => {
-          
+                    match self.run_game(frontend, first, hand) {
+         
