@@ -26,4 +26,6 @@ impl<B: Backend> Client<B> {
             match self.backend.wait() {
                 Ok(EventType::NewGameRelative {first, hand}) => {
                     match self.run_game(frontend, first, hand) {
-                        Err(GameError::PlayerLeft) => return self.scor
+                        Err(GameError::PlayerLeft) => return self.scores,
+                        _ => (),
+                    }
