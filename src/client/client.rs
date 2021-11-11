@@ -29,3 +29,5 @@ impl<B: Backend> Client<B> {
                         Err(GameError::PlayerLeft) => return self.scores,
                         _ => (),
                     }
+                }
+                Ok(event) => frontend.unexpe
