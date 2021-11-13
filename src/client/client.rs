@@ -30,4 +30,5 @@ impl<B: Backend> Client<B> {
                         _ => (),
                     }
                 }
-                Ok(event) => frontend.unexpe
+                Ok(event) => frontend.unexpected_event(event),
+                Err(err) => frontend.show_error(err
