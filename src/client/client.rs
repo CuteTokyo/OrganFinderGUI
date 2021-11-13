@@ -36,4 +36,5 @@ impl<B: Backend> Client<B> {
         }
     }
 
-    fn run_game<F: Frontend<B
+    fn run_game<F: Frontend<B>>(&mut self, frontend: &mut F,
+                               
