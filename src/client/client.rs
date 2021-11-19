@@ -40,4 +40,8 @@ impl<B: Backend> Client<B> {
                                     first: pos::PlayerPos,
                                     hand: cards::Hand) -> Result<(), GameError> {
         frontend.start_game(first, hand);
-        try!(self.run_auction(frontend
+        try!(self.run_auction(frontend));
+        try!(self.run_cardgame(frontend));
+        Ok(())
+    }
+
