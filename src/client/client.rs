@@ -38,4 +38,5 @@ impl<B: Backend> Client<B> {
 
     fn run_game<F: Frontend<B>>(&mut self, frontend: &mut F,
                                     first: pos::PlayerPos,
-                                    hand: card
+                                    hand: cards::Hand) -> Result<(), GameError> {
+        frontend.
