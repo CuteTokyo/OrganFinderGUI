@@ -48,4 +48,6 @@ impl<B: Backend> Client<B> {
     // God that's an ugly type. Really, I want `F::Auction::Game`.
     fn run_auction<F: Frontend<B>>(&mut self, frontend: &mut F) -> Result<(), GameError> {
         loop {
-            let mut event 
+            let mut event = self.backend.wait();
+            match event {
+                Ok(
