@@ -45,3 +45,4 @@ impl<B: Backend> Client<B> {
         Ok(())
     }
 
+    // God that's an ugly type. Really, I want `F::Auction::
