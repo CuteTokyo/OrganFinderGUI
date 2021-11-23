@@ -53,4 +53,5 @@ impl<B: Backend> Client<B> {
                 Ok(EventType::YourTurn) => {
                     event = match frontend.ask_bid() {
                         AuctionAction::Leave => {
-  
+                            frontend.party_cancelled("you left");
+   
