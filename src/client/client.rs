@@ -51,4 +51,6 @@ impl<B: Backend> Client<B> {
             let mut event = self.backend.wait();
             match event {
                 Ok(EventType::YourTurn) => {
-                    event = match fronte
+                    event = match frontend.ask_bid() {
+                        AuctionAction::Leave => {
+  
