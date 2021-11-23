@@ -50,4 +50,5 @@ impl<B: Backend> Client<B> {
         loop {
             let mut event = self.backend.wait();
             match event {
-                Ok(
+                Ok(EventType::YourTurn) => {
+                    event = match fronte
