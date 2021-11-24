@@ -57,4 +57,5 @@ impl<B: Backend> Client<B> {
                             return Err(GameError::PlayerLeft);
                         }
                         AuctionAction::Coinche => self.backend.coinche(),
-                        AuctionAction:
+                        AuctionAction::Pass => self.backend.pass(),
+                        AuctionAction::Bid(
