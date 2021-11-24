@@ -58,4 +58,5 @@ impl<B: Backend> Client<B> {
                         }
                         AuctionAction::Coinche => self.backend.coinche(),
                         AuctionAction::Pass => self.backend.pass(),
-                        AuctionAction::Bid(
+                        AuctionAction::Bid((suit, target)) => {
+                            self.backend.bid(C
