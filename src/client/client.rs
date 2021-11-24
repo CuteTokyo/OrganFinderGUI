@@ -56,4 +56,5 @@ impl<B: Backend> Client<B> {
                             frontend.party_cancelled("you left");
                             return Err(GameError::PlayerLeft);
                         }
-                        AuctionActio
+                        AuctionAction::Coinche => self.backend.coinche(),
+                        AuctionAction:
