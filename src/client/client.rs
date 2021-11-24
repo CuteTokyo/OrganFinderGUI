@@ -54,4 +54,5 @@ impl<B: Backend> Client<B> {
                     event = match frontend.ask_bid() {
                         AuctionAction::Leave => {
                             frontend.party_cancelled("you left");
-   
+                            return Err(GameError::PlayerLeft);
+ 
