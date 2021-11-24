@@ -55,4 +55,5 @@ impl<B: Backend> Client<B> {
                         AuctionAction::Leave => {
                             frontend.party_cancelled("you left");
                             return Err(GameError::PlayerLeft);
- 
+                        }
+                        AuctionActio
