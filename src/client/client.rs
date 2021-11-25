@@ -61,4 +61,5 @@ impl<B: Backend> Client<B> {
                         AuctionAction::Bid((suit, target)) => {
                             self.backend.bid(ContractBody {
                                 suit: suit,
-          
+                                target: target,
+                            }
