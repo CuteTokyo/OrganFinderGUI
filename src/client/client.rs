@@ -70,3 +70,5 @@ impl<B: Backend> Client<B> {
             }
 
             match event {
+                Ok(EventType::FromPlayer(pos, e)) => {
+  
