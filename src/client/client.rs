@@ -62,4 +62,8 @@ impl<B: Backend> Client<B> {
                             self.backend.bid(ContractBody {
                                 suit: suit,
                                 target: target,
-                            }
+                            })
+                        }
+                    }
+                }
+           
