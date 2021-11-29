@@ -66,4 +66,7 @@ impl<B: Backend> Client<B> {
                         }
                     }
                 }
-           
+                _ => (),
+            }
+
+            match event {
