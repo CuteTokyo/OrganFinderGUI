@@ -73,4 +73,5 @@ impl<B: Backend> Client<B> {
                 Ok(EventType::FromPlayer(pos, e)) => {
                     match e {
                         PlayerEvent::Bidded(suit, target) => frontend.show_bid(pos, suit, target),
-                        PlayerEvent::Passed => frontend.sh
+                        PlayerEvent::Passed => frontend.show_pass(pos),
+                        PlayerEvent::Coinched => fro
