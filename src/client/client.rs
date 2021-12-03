@@ -74,4 +74,5 @@ impl<B: Backend> Client<B> {
                     match e {
                         PlayerEvent::Bidded(suit, target) => frontend.show_bid(pos, suit, target),
                         PlayerEvent::Passed => frontend.show_pass(pos),
-                        PlayerEvent::Coinched => fro
+                        PlayerEvent::Coinched => frontend.show_coinche(pos),
+                        _ => f
