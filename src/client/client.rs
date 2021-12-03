@@ -72,4 +72,4 @@ impl<B: Backend> Client<B> {
             match event {
                 Ok(EventType::FromPlayer(pos, e)) => {
                     match e {
-                        PlayerE
+                        PlayerEvent::Bidded(suit, target) => frontend.show_bid(pos, sui
