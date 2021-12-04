@@ -75,4 +75,5 @@ impl<B: Backend> Client<B> {
                         PlayerEvent::Bidded(suit, target) => frontend.show_bid(pos, suit, target),
                         PlayerEvent::Passed => frontend.show_pass(pos),
                         PlayerEvent::Coinched => frontend.show_coinche(pos),
-                        _ => f
+                        _ => frontend.unexpected_event(EventType::FromPlayer(pos, e)),
+                
