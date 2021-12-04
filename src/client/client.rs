@@ -79,4 +79,5 @@ impl<B: Backend> Client<B> {
                     }
                 }
                 Ok(EventType::BidCancelled) => {
-                    frontend.auc
+                    frontend.auction_cancelled();
+                    return Err(GameError::NoCo
