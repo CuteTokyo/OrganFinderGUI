@@ -78,4 +78,5 @@ impl<B: Backend> Client<B> {
                         _ => frontend.unexpected_event(EventType::FromPlayer(pos, e)),
                     }
                 }
-                Ok(EventType::BidC
+                Ok(EventType::BidCancelled) => {
+                    frontend.auc
