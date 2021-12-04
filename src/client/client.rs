@@ -76,4 +76,6 @@ impl<B: Backend> Client<B> {
                         PlayerEvent::Passed => frontend.show_pass(pos),
                         PlayerEvent::Coinched => frontend.show_coinche(pos),
                         _ => frontend.unexpected_event(EventType::FromPlayer(pos, e)),
-                
+                    }
+                }
+                Ok(EventType::BidC
