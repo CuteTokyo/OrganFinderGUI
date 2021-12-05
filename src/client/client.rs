@@ -80,4 +80,6 @@ impl<B: Backend> Client<B> {
                 }
                 Ok(EventType::BidCancelled) => {
                     frontend.auction_cancelled();
-                    return Err(GameError::NoCo
+                    return Err(GameError::NoContract);
+                }
+                Ok(EventType::PartyCancelled(
