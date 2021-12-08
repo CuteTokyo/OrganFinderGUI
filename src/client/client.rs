@@ -82,4 +82,5 @@ impl<B: Backend> Client<B> {
                     frontend.auction_cancelled();
                     return Err(GameError::NoContract);
                 }
-                Ok(EventType::PartyCancelled(
+                Ok(EventType::PartyCancelled(msg)) => {
+                    frontend.party_cancelled(&ms
