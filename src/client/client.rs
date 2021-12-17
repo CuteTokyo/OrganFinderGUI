@@ -85,4 +85,5 @@ impl<B: Backend> Client<B> {
                 Ok(EventType::PartyCancelled(msg)) => {
                     frontend.party_cancelled(&msg);
                     return Err(GameError::PlayerLeft);
-      
+                }
+                Ok(EventType::BidOver(contract)) =
