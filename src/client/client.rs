@@ -90,4 +90,5 @@ impl<B: Backend> Client<B> {
                     frontend.auction_over(&contract);
                     return Ok(());
                 }
-          
+                Ok(event) => frontend.unexpected_event(event),
+    
