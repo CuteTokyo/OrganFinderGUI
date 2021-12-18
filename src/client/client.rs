@@ -88,3 +88,6 @@ impl<B: Backend> Client<B> {
                 }
                 Ok(EventType::BidOver(contract)) => {
                     frontend.auction_over(&contract);
+                    return Ok(());
+                }
+          
