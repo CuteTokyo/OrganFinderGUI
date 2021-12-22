@@ -96,4 +96,5 @@ impl<B: Backend> Client<B> {
         }
     }
 
-    fn run_cardgame<F: Frontend<B
+    fn run_cardgame<F: Frontend<B>>(&mut self, frontend: &mut F) -> Result<(), GameError> {
+        
