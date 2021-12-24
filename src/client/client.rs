@@ -100,4 +100,5 @@ impl<B: Backend> Client<B> {
         loop {
             let mut event = self.backend.wait();
             match event {
-                Ok(EventType::YourTurn) =
+                Ok(EventType::YourTurn) => {
+                    event = match frontend.ask_card() {
