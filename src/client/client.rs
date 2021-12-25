@@ -106,4 +106,5 @@ impl<B: Backend> Client<B> {
                             frontend.party_cancelled("you left");
                             return Err(GameError::PlayerLeft);
                         }
-                
+                        GameAction::PlayCard(card) => {
+               
