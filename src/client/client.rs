@@ -107,4 +107,5 @@ impl<B: Backend> Client<B> {
                             return Err(GameError::PlayerLeft);
                         }
                         GameAction::PlayCard(card) => {
-               
+                            self.backend.play_card(CardBody { card: card })
+      
