@@ -103,4 +103,4 @@ impl<B: Backend> Client<B> {
                 Ok(EventType::YourTurn) => {
                     event = match frontend.ask_card() {
                         GameAction::Leave => {
-  
+                            frontend.party_cancelled(
