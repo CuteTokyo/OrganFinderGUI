@@ -108,4 +108,7 @@ impl<B: Backend> Client<B> {
                         }
                         GameAction::PlayCard(card) => {
                             self.backend.play_card(CardBody { card: card })
-      
+                        }
+                    };
+                }
+             
