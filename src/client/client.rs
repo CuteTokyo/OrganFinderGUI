@@ -121,3 +121,4 @@ impl<B: Backend> Client<B> {
                     frontend.game_over(points, winner, scores);
                     return Ok(());
                 }
+                Ok(EventType::TrickOver{winner}) => frontend.show
