@@ -116,4 +116,5 @@ impl<B: Backend> Client<B> {
 
             match event {
                 Ok(EventType::GameOver{points, winner, scores}) => {
-                    se
+                    self.scores[0] += scores[0];
+                    self.scores[1]
