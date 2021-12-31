@@ -115,4 +115,5 @@ impl<B: Backend> Client<B> {
             }
 
             match event {
-     
+                Ok(EventType::GameOver{points, winner, scores}) => {
+                    se
