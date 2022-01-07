@@ -124,4 +124,5 @@ impl<B: Backend> Client<B> {
                 Ok(EventType::TrickOver{winner}) => frontend.show_trick_over(winner),
                 Ok(EventType::FromPlayer(pos, e)) => {
                     match e {
-                        PlayerEvent::CardPla
+                        PlayerEvent::CardPlayed(card) => frontend.show_card_played(pos, card),
+     
