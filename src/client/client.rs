@@ -125,4 +125,4 @@ impl<B: Backend> Client<B> {
                 Ok(EventType::FromPlayer(pos, e)) => {
                     match e {
                         PlayerEvent::CardPlayed(card) => frontend.show_card_played(pos, card),
-     
+                        _ => frontend.unexpected_event(EventType::FromPlay
