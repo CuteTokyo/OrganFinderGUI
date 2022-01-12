@@ -130,4 +130,6 @@ impl<B: Backend> Client<B> {
                 }
                 Ok(EventType::PartyCancelled(msg)) => {
                     frontend.party_cancelled(&msg);
-                    return Err(Gam
+                    return Err(GameError::PlayerLeft);
+                }
+                Ok(
