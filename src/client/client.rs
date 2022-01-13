@@ -132,4 +132,5 @@ impl<B: Backend> Client<B> {
                     frontend.party_cancelled(&msg);
                     return Err(GameError::PlayerLeft);
                 }
-                Ok(
+                Ok(event) => frontend.unexpected_event(event),
+                
