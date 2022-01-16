@@ -133,4 +133,6 @@ impl<B: Backend> Client<B> {
                     return Err(GameError::PlayerLeft);
                 }
                 Ok(event) => frontend.unexpected_event(event),
-                
+                Err(err) => frontend.show_error(err),
+            }
+       
