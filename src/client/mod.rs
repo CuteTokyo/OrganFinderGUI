@@ -38,3 +38,29 @@ pub trait Frontend<B: Backend> {
 
     /// Auction cancelled, back to the start.
     fn auction_cancelled(&mut self);
+    /// Auction is complete, we can play now!
+    fn auction_over(&mut self, contract: &bid::Contract);
+
+    fn start_game(&mut self, first: pos::PlayerPos, hand: cards::Hand);
+}
+
+pub trait Backend {
+    type Error;
+
+    /// Wait for the next event and return it.
+    fn wait(&mut self) -> Result<EventType, Self::Error>;
+
+    /// Make a bid offer.
+    ///
+    /// Return the event caused by the action.
+    fn bid(&mut self, contract: ContractBody) -> Result<EventType, Self::Error>;
+
+    /// Pass during auction.
+    ///
+    /// Return the event caused by the action.
+    fn pass(&mut self) -> Result<EventType, Self::Error>;
+
+    fn coinche(&mut self) -> Result<EventType, Self::Error>;
+
+    fn play_card(&mut self, card: CardBody) -> Result<EventType, Self::Error>;
+}
