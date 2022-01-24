@@ -1,3 +1,5 @@
 //! Event module
 
-use rustc_seriali
+use rustc_serialize;
+use rustc_serialize::Decodable;
+use libcoinche::{cards, 
