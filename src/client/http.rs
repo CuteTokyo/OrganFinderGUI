@@ -146,3 +146,32 @@ impl Backend for HttpBackend {
                                                              SubLevel::Json,
                                                              vec![(Attr::Charset, Value::Utf8)])))
                                     .body(&body)
+                                    .send());
+        self.read_event(&mut response)
+    }
+
+    fn pass(&mut self) -> Result<EventType, Error> {
+        let pass_url = format!("http://{}/pass/{}", self.host, self.player_id);
+        let mut response = try!(hyper::Client::new().post(&pass_url).send());
+        self.read_event(&mut response)
+    }
+
+    fn coinche(&mut self) -> Result<EventType, Error> {
+        let coinche_url = format!("http://{}/coinche/{}", self.host, self.player_id);
+        let mut response = try!(hyper::Client::new().post(&coinche_url).send());
+        self.read_event(&mut response)
+    }
+
+    fn play_card(&mut self, card: CardBody) -> Result<EventType, Error> {
+        let play_url = format!("http://{}/play/{}", self.host, self.player_id);
+        let body = json::encode(&card).unwrap();
+        let mut response = try!(hyper::Client::new()
+                                    .post(&play_url)
+                                    .header(ContentType(Mime(TopLevel::Application,
+                                                             SubLevel::Json,
+                                                             vec![(Attr::Charset, Value::Utf8)])))
+                                    .body(&body)
+                                    .send());
+        self.read_event(&mut response)
+    }
+}
