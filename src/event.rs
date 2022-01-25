@@ -7,4 +7,6 @@ use libcoinche::{cards, bid, pos};
 /// An event about a player.
 #[derive(Clone,Debug)]
 pub enum PlayerEvent {
-    /// A player made a
+    /// A player made a new bid in the auction.
+    Bidded(cards::Suit, bid::Target),
+    /// A play
