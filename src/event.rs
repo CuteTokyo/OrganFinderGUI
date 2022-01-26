@@ -9,4 +9,6 @@ use libcoinche::{cards, bid, pos};
 pub enum PlayerEvent {
     /// A player made a new bid in the auction.
     Bidded(cards::Suit, bid::Target),
-    /// A play
+    /// A player coinched the current bid in the auction.
+    Coinched,
+ 
