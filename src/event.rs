@@ -11,4 +11,5 @@ pub enum PlayerEvent {
     Bidded(cards::Suit, bid::Target),
     /// A player coinched the current bid in the auction.
     Coinched,
- 
+    /// A player passed in the auction.
+    Passed
