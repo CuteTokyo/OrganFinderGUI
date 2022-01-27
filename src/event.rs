@@ -12,4 +12,9 @@ pub enum PlayerEvent {
     /// A player coinched the current bid in the auction.
     Coinched,
     /// A player passed in the auction.
-    Passed
+    Passed,
+    /// A player played a card.
+    CardPlayed(cards::Card),
+}
+
+impl
