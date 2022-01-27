@@ -17,4 +17,5 @@ pub enum PlayerEvent {
     CardPlayed(cards::Card),
 }
 
-impl
+impl rustc_serialize::Encodable for PlayerEvent {
+    fn encode<S: r
