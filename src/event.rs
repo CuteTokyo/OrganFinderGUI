@@ -19,4 +19,5 @@ pub enum PlayerEvent {
 
 impl rustc_serialize::Encodable for PlayerEvent {
     fn encode<S: rustc_serialize::Encoder>(&self, s: &mut S) -> Result<(), S::Error> {
-  
+        match self {
+            &PlayerEvent::Bidded(
