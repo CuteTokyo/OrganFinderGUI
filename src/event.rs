@@ -22,4 +22,5 @@ impl rustc_serialize::Encodable for PlayerEvent {
         match self {
             &PlayerEvent::Bidded(suit, target) => {
                 s.emit_struct("PlayerEvent", 3, |s| {
-                    try!(encode_field!(s, "typ
+                    try!(encode_field!(s, "type", 0, "Bidded"));
+                    try!(encode_field!(s, "su
