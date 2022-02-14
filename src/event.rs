@@ -27,4 +27,6 @@ impl rustc_serialize::Encodable for PlayerEvent {
                     try!(encode_field!(s, "target", 2, target));
                     Ok(())
                 })
-         
+            }
+            &PlayerEvent::Coinched => {
+          
