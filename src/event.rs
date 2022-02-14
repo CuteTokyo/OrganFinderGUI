@@ -29,4 +29,5 @@ impl rustc_serialize::Encodable for PlayerEvent {
                 })
             }
             &PlayerEvent::Coinched => {
-          
+                s.emit_struct("PlayerEvent",
+                              
