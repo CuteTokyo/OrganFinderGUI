@@ -34,4 +34,6 @@ impl rustc_serialize::Encodable for PlayerEvent {
                               |s| encode_field!(s, "type", 0, "Coinched"))
             }
             &PlayerEvent::Passed => {
-                s.emit_struct("PlayerEvent", 1, |s| enc
+                s.emit_struct("PlayerEvent", 1, |s| encode_field!(s, "type", 0, "Passed"))
+            }
+            &PlayerEvent::
