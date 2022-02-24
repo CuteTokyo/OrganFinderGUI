@@ -47,4 +47,5 @@ impl rustc_serialize::Encodable for PlayerEvent {
     }
 }
 
-impl
+impl rustc_serialize::Decodable for PlayerEvent {
+    fn decode<D: r
