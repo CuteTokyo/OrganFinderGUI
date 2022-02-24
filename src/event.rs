@@ -48,4 +48,4 @@ impl rustc_serialize::Encodable for PlayerEvent {
 }
 
 impl rustc_serialize::Decodable for PlayerEvent {
-    fn decode<D: r
+    fn decode<D: rustc_serialize::Decoder>(d: &mut D) -> Result<Self, 
