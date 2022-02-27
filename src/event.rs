@@ -53,4 +53,5 @@ impl rustc_serialize::Decodable for PlayerEvent {
             match try!(d.read_struct_field("type", 0, |d| d.read_str())).as_ref() {
                 "Bidded" => {
                     let suit = try!(d.read_struct_field("suit", 1, |d| cards::Suit::decode(d)));
-                    let target = try!(d.read_struct_field("target", 2, |d| bid::Target::decode(d)
+                    let target = try!(d.read_struct_field("target", 2, |d| bid::Target::decode(d)));
+                    Ok(PlayerEvent::Bidded(suit, tar
