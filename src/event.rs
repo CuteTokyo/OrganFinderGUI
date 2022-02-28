@@ -58,4 +58,6 @@ impl rustc_serialize::Decodable for PlayerEvent {
                 }
                 "CardPlayed" => {
                     let card = try!(d.read_struct_field("card", 1, |d| cards::Card::decode(d)));
-                    Ok(PlayerEvent::CardPl
+                    Ok(PlayerEvent::CardPlayed(card))
+                }
+                "Passed" => Ok(Playe
