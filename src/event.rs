@@ -57,4 +57,5 @@ impl rustc_serialize::Decodable for PlayerEvent {
                     Ok(PlayerEvent::Bidded(suit, target))
                 }
                 "CardPlayed" => {
-                    let card = try!(d.read_struct_field("card", 1, |d| c
+                    let card = try!(d.read_struct_field("card", 1, |d| cards::Card::decode(d)));
+                    Ok(PlayerEvent::CardPl
