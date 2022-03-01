@@ -61,4 +61,5 @@ impl rustc_serialize::Decodable for PlayerEvent {
                     Ok(PlayerEvent::CardPlayed(card))
                 }
                 "Passed" => Ok(PlayerEvent::Passed),
-                "Coinched" => Ok(Pla
+                "Coinched" => Ok(PlayerEvent::Coinched),
+                _ => Err(d.error("unknown event type")
