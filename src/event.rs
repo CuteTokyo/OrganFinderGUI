@@ -62,4 +62,10 @@ impl rustc_serialize::Decodable for PlayerEvent {
                 }
                 "Passed" => Ok(PlayerEvent::Passed),
                 "Coinched" => Ok(PlayerEvent::Coinched),
-                _ => Err(d.error("unknown event type")
+                _ => Err(d.error("unknown event type")),
+            }
+        })
+    }
+}
+
+/// Represents an event that 
