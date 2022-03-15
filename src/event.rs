@@ -68,4 +68,6 @@ impl rustc_serialize::Decodable for PlayerEvent {
     }
 }
 
-/// Represents an event that 
+/// Represents an event that can happen during the game.
+#[derive(Clone,Debug)]
+pub enum EventT
