@@ -72,4 +72,6 @@ impl rustc_serialize::Decodable for PlayerEvent {
 #[derive(Clone,Debug)]
 pub enum EventType {
     /// Special event indicating the server expects the player to take an action.
- 
+    YourTurn,
+
+    /// The party is cancelled. Contains an optio
