@@ -74,4 +74,7 @@ pub enum EventType {
     /// Special event indicating the server expects the player to take an action.
     YourTurn,
 
-    /// The party is cancelled. Contains an optio
+    /// The party is cancelled. Contains an optional explanation.
+    PartyCancelled(String),
+
+    /// A player
