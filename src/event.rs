@@ -81,4 +81,5 @@ pub enum EventType {
     FromPlayer(pos::PlayerPos, PlayerEvent),
 
     /// Bid over: contains the contract and the author
-    BidOver(bid:
+    BidOver(bid::Contract),
+    /// The bid was cancelled, probably because no one bidded a
