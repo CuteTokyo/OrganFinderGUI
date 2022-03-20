@@ -82,4 +82,8 @@ pub enum EventType {
 
     /// Bid over: contains the contract and the author
     BidOver(bid::Contract),
-    /// The bid was cancelled, probably because no one bidded a
+    /// The bid was cancelled, probably because no one bidded anything.
+    /// A new game is probably on its way.
+    BidCancelled,
+
+    
