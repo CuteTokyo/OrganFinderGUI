@@ -77,4 +77,7 @@ pub enum EventType {
     /// The party is cancelled. Contains an optional explanation.
     PartyCancelled(String),
 
-    /// A player
+    /// A player did something!
+    FromPlayer(pos::PlayerPos, PlayerEvent),
+
+    /// Bid ove
