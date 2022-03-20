@@ -80,4 +80,5 @@ pub enum EventType {
     /// A player did something!
     FromPlayer(pos::PlayerPos, PlayerEvent),
 
-    /// Bid ove
+    /// Bid over: contains the contract and the author
+    BidOver(bid:
