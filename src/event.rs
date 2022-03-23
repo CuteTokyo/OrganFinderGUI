@@ -86,4 +86,6 @@ pub enum EventType {
     /// A new game is probably on its way.
     BidCancelled,
 
-    
+    /// Trick over: contains the winner
+    TrickOver {
+        winner: pos::P
