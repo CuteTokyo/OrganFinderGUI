@@ -95,4 +95,6 @@ pub enum EventType {
     /// For internal use only, it is never sent on the network.
     NewGame {
         first: pos::PlayerPos,
-        h
+        hands: [cards::Hand; 4],
+    },
+    /// New game event, translated for each player.
