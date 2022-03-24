@@ -88,4 +88,7 @@ pub enum EventType {
 
     /// Trick over: contains the winner
     TrickOver {
-        winner: pos::P
+        winner: pos::PlayerPos,
+    },
+
+    /// New game: contains the first player, and the player's
