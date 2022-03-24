@@ -91,4 +91,5 @@ pub enum EventType {
         winner: pos::PlayerPos,
     },
 
-    /// New game: contains the first player, and the player's
+    /// New game: contains the first player, and the player's hand.
+    /// For internal use only, it is never sent on the
