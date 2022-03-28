@@ -98,3 +98,6 @@ pub enum EventType {
         hands: [cards::Hand; 4],
     },
     /// New game event, translated for each player.
+    NewGameRelative {
+        first: pos::PlayerPos,
+        hand: car
