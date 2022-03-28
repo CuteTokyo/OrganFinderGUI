@@ -100,4 +100,8 @@ pub enum EventType {
     /// New game event, translated for each player.
     NewGameRelative {
         first: pos::PlayerPos,
-        hand: car
+        hand: cards::Hand,
+    },
+
+    /// Game over: contains scores
+    GameOv
