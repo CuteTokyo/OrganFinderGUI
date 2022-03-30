@@ -104,4 +104,7 @@ pub enum EventType {
     },
 
     /// Game over: contains scores
-    GameOv
+    GameOver {
+        points: [i32; 2],
+        winner: pos::Team,
+ 
