@@ -112,4 +112,4 @@ pub enum EventType {
 }
 
 impl EventType {
-    /// 
+    /// Returns a version of the event from the point of view of a g
