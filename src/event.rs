@@ -112,4 +112,5 @@ pub enum EventType {
 }
 
 impl EventType {
-    /// Returns a version of the event from the point of view of a g
+    /// Returns a version of the event from the point of view of a given player.
+    /// It returns a direct clone of the event 
