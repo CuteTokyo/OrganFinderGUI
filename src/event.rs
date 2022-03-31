@@ -107,4 +107,9 @@ pub enum EventType {
     GameOver {
         points: [i32; 2],
         winner: pos::Team,
- 
+        scores: [i32; 2],
+    },
+}
+
+impl EventType {
+    /// 
