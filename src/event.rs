@@ -114,4 +114,5 @@ pub enum EventType {
 impl EventType {
     /// Returns a version of the event from the point of view of a given player.
     /// It returns a direct clone of the event for most event types,
-    /// except for a NewGame, where it only returns 
+    /// except for a NewGame, where it only returns the player's hand.
+    pub fn relativize(&self, from: pos::PlayerPos) -> Se
