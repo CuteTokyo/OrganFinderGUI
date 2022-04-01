@@ -117,4 +117,6 @@ impl EventType {
     /// except for a NewGame, where it only returns the player's hand.
     pub fn relativize(&self, from: pos::PlayerPos) -> Self {
         match self {
-            &EventType::NewGame
+            &EventType::NewGame { first, hands } => {
+                EventType::NewGameRelative {
+   
