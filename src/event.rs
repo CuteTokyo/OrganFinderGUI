@@ -119,4 +119,5 @@ impl EventType {
         match self {
             &EventType::NewGame { first, hands } => {
                 EventType::NewGameRelative {
-   
+                    first: first,
+                    hand: hands[fro
