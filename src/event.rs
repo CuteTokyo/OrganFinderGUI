@@ -120,4 +120,7 @@ impl EventType {
             &EventType::NewGame { first, hands } => {
                 EventType::NewGameRelative {
                     first: first,
-                    hand: hands[fro
+                    hand: hands[from as usize],
+                }
+            }
+            _ => self.clone
