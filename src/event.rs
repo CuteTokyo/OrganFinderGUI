@@ -130,4 +130,6 @@ impl EventType {
 
 // Ugly serialization...
 impl rustc_serialize::Encodable for EventType {
-    fn encode<S: rustc_serialize::Encoder>(&self, s: &mut S) -> Result<(), S::E
+    fn encode<S: rustc_serialize::Encoder>(&self, s: &mut S) -> Result<(), S::Error> {
+        match self {
+            &EventType::PartyCancelled(r
