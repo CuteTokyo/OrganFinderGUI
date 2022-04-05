@@ -134,4 +134,4 @@ impl rustc_serialize::Encodable for EventType {
         match self {
             &EventType::PartyCancelled(ref msg) => {
                 s.emit_struct("Event", 2, |s| {
-      
+                    try!(encode_field!(s, "type", 0, "Par
