@@ -132,4 +132,6 @@ impl EventType {
 impl rustc_serialize::Encodable for EventType {
     fn encode<S: rustc_serialize::Encoder>(&self, s: &mut S) -> Result<(), S::Error> {
         match self {
-            &EventType::PartyCancelled(r
+            &EventType::PartyCancelled(ref msg) => {
+                s.emit_struct("Event", 2, |s| {
+      
