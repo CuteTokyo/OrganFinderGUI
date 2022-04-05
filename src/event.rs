@@ -123,4 +123,10 @@ impl EventType {
                     hand: hands[from as usize],
                 }
             }
-            _ => self.clone
+            _ => self.clone(),
+        }
+    }
+}
+
+// Ugly serialization...
+im
