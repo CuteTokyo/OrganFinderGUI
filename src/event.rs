@@ -139,3 +139,5 @@ impl rustc_serialize::Encodable for EventType {
                     Ok(())
                 })
             }
+            &EventType::YourTurn => {
+                s.emit_struct
