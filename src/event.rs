@@ -135,4 +135,7 @@ impl rustc_serialize::Encodable for EventType {
             &EventType::PartyCancelled(ref msg) => {
                 s.emit_struct("Event", 2, |s| {
                     try!(encode_field!(s, "type", 0, "PartyCancelled"));
-                    try!(encode_field!(s, "msg",
+                    try!(encode_field!(s, "msg", 1, msg));
+                    Ok(())
+                })
+            }
