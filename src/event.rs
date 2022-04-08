@@ -143,4 +143,4 @@ impl rustc_serialize::Encodable for EventType {
                 s.emit_struct("Event", 1, |s| encode_field!(s, "type", 0, "YourTurn"))
             }
             &EventType::BidCancelled => {
-       
+                s.emit_struct("Event", 1, |s| encode_field!(s, "type"
