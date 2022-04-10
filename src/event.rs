@@ -148,3 +148,4 @@ impl rustc_serialize::Encodable for EventType {
             &EventType::BidOver(ref contract) => {
                 s.emit_struct("Event", 2, |s| {
                     try!(encode_field!(s, "type", 0, "BidOver"));
+                    try!(encode_field!(s, "contract", 1, contrac
