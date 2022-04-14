@@ -154,4 +154,5 @@ impl rustc_serialize::Encodable for EventType {
             }
             &EventType::TrickOver { winner } => {
                 s.emit_struct("Event", 2, |s| {
-                    try!(encode_field!(s
+                    try!(encode_field!(s, "type", 0, "TrickOver"));
+                    try!(encode_field!(s, 
