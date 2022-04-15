@@ -158,4 +158,5 @@ impl rustc_serialize::Encodable for EventType {
                     try!(encode_field!(s, "winner", 1, winner));
                     Ok(())
                 })
-      
+            }
+            &EventType::FromPlayer(pos, ref event) => {
