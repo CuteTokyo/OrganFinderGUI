@@ -162,4 +162,5 @@ impl rustc_serialize::Encodable for EventType {
             &EventType::FromPlayer(pos, ref event) => {
                 s.emit_struct("Event", 3, |s| {
                     try!(encode_field!(s, "type", 0, "FromPlayer"));
-          
+                    try!(encode_field!(s, "pos", 1, pos));
+                    try!(en
