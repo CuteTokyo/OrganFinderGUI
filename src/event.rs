@@ -165,4 +165,6 @@ impl rustc_serialize::Encodable for EventType {
                     try!(encode_field!(s, "pos", 1, pos));
                     try!(encode_field!(s, "event", 2, event));
                     Ok(())
-            
+                })
+            }
+            &EventType::NewGame { first, ref 
