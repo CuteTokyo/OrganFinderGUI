@@ -171,4 +171,5 @@ impl rustc_serialize::Encodable for EventType {
                 s.emit_struct("Event", 3, |s| {
                     // Should rarely happen
                     try!(encode_field!(s, "type", 0, "NewGameGlobal"));
-                
+                    try!(encode_field!(s, "first", 1, first));
+                    try!
