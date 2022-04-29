@@ -174,4 +174,6 @@ impl rustc_serialize::Encodable for EventType {
                     try!(encode_field!(s, "first", 1, first));
                     try!(encode_field!(s, "hands", 2, hands));
                     Ok(())
- 
+                })
+            }
+            &EventType::NewGam
