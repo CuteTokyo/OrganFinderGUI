@@ -170,4 +170,5 @@ impl rustc_serialize::Encodable for EventType {
             &EventType::NewGame { first, ref hands } => {
                 s.emit_struct("Event", 3, |s| {
                     // Should rarely happen
-                    try!(encode_
+                    try!(encode_field!(s, "type", 0, "NewGameGlobal"));
+                
