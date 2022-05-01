@@ -176,4 +176,5 @@ impl rustc_serialize::Encodable for EventType {
                     Ok(())
                 })
             }
-            &EventType::NewGam
+            &EventType::NewGameRelative { first, ref hand } => {
+       
