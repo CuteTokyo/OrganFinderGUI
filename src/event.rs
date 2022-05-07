@@ -180,4 +180,5 @@ impl rustc_serialize::Encodable for EventType {
                 s.emit_struct("Event", 3, |s| {
                     try!(encode_field!(s, "type", 0, "NewGame"));
                     try!(encode_field!(s, "first", 1, first));
-              
+                    try!(encode_field!(s, "cards", 2, hand));
+                 
