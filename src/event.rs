@@ -181,4 +181,7 @@ impl rustc_serialize::Encodable for EventType {
                     try!(encode_field!(s, "type", 0, "NewGame"));
                     try!(encode_field!(s, "first", 1, first));
                     try!(encode_field!(s, "cards", 2, hand));
-                 
+                    Ok(())
+                })
+            }
+            &
