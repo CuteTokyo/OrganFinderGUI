@@ -184,4 +184,5 @@ impl rustc_serialize::Encodable for EventType {
                     Ok(())
                 })
             }
-            &
+            &EventType::GameOver { points, winner, scores } => {
+        
