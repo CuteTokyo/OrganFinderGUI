@@ -186,4 +186,5 @@ impl rustc_serialize::Encodable for EventType {
             }
             &EventType::GameOver { points, winner, scores } => {
                 s.emit_struct("Event", 4, |s| {
-                    try!(enc
+                    try!(encode_field!(s, "type", 0, "GameOver"));
+                    try!
