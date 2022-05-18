@@ -189,4 +189,5 @@ impl rustc_serialize::Encodable for EventType {
                     try!(encode_field!(s, "type", 0, "GameOver"));
                     try!(encode_field!(s, "points", 1, points));
                     try!(encode_field!(s, "winner", 2, winner));
+                    try!(encode_field!(s, "scores", 3, scores));
                 
