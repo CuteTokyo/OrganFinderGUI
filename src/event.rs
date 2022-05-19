@@ -197,4 +197,5 @@ impl rustc_serialize::Encodable for EventType {
     }
 }
 
-impl rustc
+impl rustc_serialize::Decodable for EventType {
+    fn decode<D: rustc
