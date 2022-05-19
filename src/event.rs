@@ -198,4 +198,5 @@ impl rustc_serialize::Encodable for EventType {
 }
 
 impl rustc_serialize::Decodable for EventType {
-    fn decode<D: rustc
+    fn decode<D: rustc_serialize::Decoder>(d: &mut D) -> Result<Self, D::Error> {
+        d.read
