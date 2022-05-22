@@ -202,4 +202,5 @@ impl rustc_serialize::Decodable for EventType {
         d.read_struct("PlayerEvent", 0, |d| {
             match try!(d.read_struct_field("type", 0, |d| d.read_str())).as_ref() {
                 "BidCancelled" => Ok(EventType::BidCancelled),
-                "You
+                "YourTurn" => Ok(EventType::YourTurn),
+                "BidOver" =>
