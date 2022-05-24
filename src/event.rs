@@ -203,4 +203,5 @@ impl rustc_serialize::Decodable for EventType {
             match try!(d.read_struct_field("type", 0, |d| d.read_str())).as_ref() {
                 "BidCancelled" => Ok(EventType::BidCancelled),
                 "YourTurn" => Ok(EventType::YourTurn),
-                "BidOver" =>
+                "BidOver" => {
+                    let contract = try!(decode_field!(d, "
