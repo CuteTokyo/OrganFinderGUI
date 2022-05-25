@@ -204,4 +204,6 @@ impl rustc_serialize::Decodable for EventType {
                 "BidCancelled" => Ok(EventType::BidCancelled),
                 "YourTurn" => Ok(EventType::YourTurn),
                 "BidOver" => {
-                    let contract = try!(decode_field!(d, "
+                    let contract = try!(decode_field!(d, "contract", 1));
+                    Ok(EventType::BidOver(contract))
+  
