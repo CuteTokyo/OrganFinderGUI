@@ -209,4 +209,7 @@ impl rustc_serialize::Decodable for EventType {
                 }
                 "TrickOver" => {
                     let winner = try!(decode_field!(d, "winner", 1));
-                    Ok(EventType::TrickOver { winner: winner }
+                    Ok(EventType::TrickOver { winner: winner })
+                }
+                "FromPlayer" => {
+        
