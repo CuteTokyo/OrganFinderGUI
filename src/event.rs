@@ -208,4 +208,4 @@ impl rustc_serialize::Decodable for EventType {
                     Ok(EventType::BidOver(contract))
                 }
                 "TrickOver" => {
-            
+                    let winner = try!(decode_field!(d, "winner", 1))
