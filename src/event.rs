@@ -213,4 +213,5 @@ impl rustc_serialize::Decodable for EventType {
                 }
                 "FromPlayer" => {
                     let pos = try!(decode_field!(d, "pos", 1));
-         
+                    let event = try!(decode_field!(d, "event", 2));
+        
