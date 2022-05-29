@@ -221,4 +221,5 @@ impl rustc_serialize::Decodable for EventType {
                     Ok(EventType::PartyCancelled(msg))
                 }
                 "GameOver" => {
-                    let points = try!(decode_field!(d
+                    let points = try!(decode_field!(d, "points", 1));
+                    let winner = try!
