@@ -217,4 +217,5 @@ impl rustc_serialize::Decodable for EventType {
                     Ok(EventType::FromPlayer(pos, event))
                 }
                 "PartyCancelled" => {
-                    let ms
+                    let msg = try!(decode_field!(d, "msg", 1));
+                    Ok(EventTy
