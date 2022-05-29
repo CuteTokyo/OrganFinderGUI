@@ -220,4 +220,5 @@ impl rustc_serialize::Decodable for EventType {
                     let msg = try!(decode_field!(d, "msg", 1));
                     Ok(EventType::PartyCancelled(msg))
                 }
-                "GameOv
+                "GameOver" => {
+                    let points = try!(decode_field!(d
