@@ -224,4 +224,5 @@ impl rustc_serialize::Decodable for EventType {
                     let points = try!(decode_field!(d, "points", 1));
                     let winner = try!(decode_field!(d, "winner", 2));
                     let scores = try!(decode_field!(d, "scores", 3));
-            
+                    Ok(EventType::GameOver {
+                
