@@ -227,4 +227,5 @@ impl rustc_serialize::Decodable for EventType {
                     Ok(EventType::GameOver {
                         points: points,
                         winner: winner,
-     
+                        scores: scores,
+                   
