@@ -231,4 +231,5 @@ impl rustc_serialize::Decodable for EventType {
                     })
                 }
                 "NewGame" => {
-           
+                    let first = try!(decode_field!(d, "first", 1));
+                 
