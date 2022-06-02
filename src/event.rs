@@ -228,4 +228,7 @@ impl rustc_serialize::Decodable for EventType {
                         points: points,
                         winner: winner,
                         scores: scores,
-                   
+                    })
+                }
+                "NewGame" => {
+           
