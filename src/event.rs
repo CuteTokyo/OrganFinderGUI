@@ -238,4 +238,6 @@ impl rustc_serialize::Decodable for EventType {
                         hand: cards,
                     })
                 }
-                _ => 
+                _ => Err(d.error("unknown event type")),
+            }
+        })
