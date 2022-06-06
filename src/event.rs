@@ -236,4 +236,6 @@ impl rustc_serialize::Decodable for EventType {
                     Ok(EventType::NewGameRelative {
                         first: first,
                         hand: cards,
-         
+                    })
+                }
+                _ => 
