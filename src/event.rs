@@ -245,4 +245,6 @@ impl rustc_serialize::Decodable for EventType {
 }
 
 /// Represents an event happening to the game.
-#[derive(Clone,Debug,RustcEncoda
+#[derive(Clone,Debug,RustcEncodable,RustcDecodable)]
+pub struct Event {
+    /// Actual event
