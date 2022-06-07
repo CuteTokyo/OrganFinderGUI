@@ -241,3 +241,8 @@ impl rustc_serialize::Decodable for EventType {
                 _ => Err(d.error("unknown event type")),
             }
         })
+    }
+}
+
+/// Represents an event happening to the game.
+#[derive(Clone,Debug,RustcEncoda
