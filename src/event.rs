@@ -248,3 +248,6 @@ impl rustc_serialize::Decodable for EventType {
 #[derive(Clone,Debug,RustcEncodable,RustcDecodable)]
 pub struct Event {
     /// Actual event
+    pub event: EventType,
+    /// Event ID
+    pub id: usize,
