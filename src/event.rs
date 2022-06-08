@@ -251,3 +251,4 @@ pub struct Event {
     pub event: EventType,
     /// Event ID
     pub id: usize,
+}
