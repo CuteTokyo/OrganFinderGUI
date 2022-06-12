@@ -6,4 +6,6 @@ use libcoinche::game;
 
 /// A possible error.
 pub enum Error {
-    /// The given p
+    /// The given player ID is not associated with an actual game
+    BadPlayerId,
+  
