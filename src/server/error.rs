@@ -8,4 +8,7 @@ use libcoinche::game;
 pub enum Error {
     /// The given player ID is not associated with an actual game
     BadPlayerId,
-    /// The given event ID is not associated with an actu
+    /// The given event ID is not associated with an actual event
+    BadEventId,
+
+    /// Player tried to play a card during auc
