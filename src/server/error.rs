@@ -11,4 +11,6 @@ pub enum Error {
     /// The given event ID is not associated with an actual event
     BadEventId,
 
-    /// Player tried to play a card during auc
+    /// Player tried to play a card during auction.
+    PlayInAuction,
+    /// Player tried to bid during card p
