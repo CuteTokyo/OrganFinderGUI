@@ -13,4 +13,8 @@ pub enum Error {
 
     /// Player tried to play a card during auction.
     PlayInAuction,
-    /// Player tried to bid during card p
+    /// Player tried to bid during card play.
+    BidInGame,
+
+    /// An error occured during bidding.
+    Bid
