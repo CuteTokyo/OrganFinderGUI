@@ -17,4 +17,6 @@ pub enum Error {
     BidInGame,
 
     /// An error occured during bidding.
-    Bid
+    Bid(bid::BidError),
+    /// An error occured during card play.
+    Play(gam
