@@ -19,4 +19,8 @@ pub enum Error {
     /// An error occured during bidding.
     Bid(bid::BidError),
     /// An error occured during card play.
-    Play(gam
+    Play(game::PlayError),
+}
+
+impl fmt::Display for Error {
+    fn fmt(&self, f:
