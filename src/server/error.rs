@@ -26,4 +26,5 @@ impl fmt::Display for Error {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         match self {
             &Error::BadPlayerId => write!(f, "player not found"),
-            &Error::Ba
+            &Error::BadEventId => write!(f, "event not found"),
+            &Error::Pl
