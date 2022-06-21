@@ -27,4 +27,5 @@ impl fmt::Display for Error {
         match self {
             &Error::BadPlayerId => write!(f, "player not found"),
             &Error::BadEventId => write!(f, "event not found"),
-            &Error::Pl
+            &Error::PlayInAuction => write!(f, "cannot play during auction"),
+            &Error::BidInGam
