@@ -28,4 +28,5 @@ impl fmt::Display for Error {
             &Error::BadPlayerId => write!(f, "player not found"),
             &Error::BadEventId => write!(f, "event not found"),
             &Error::PlayInAuction => write!(f, "cannot play during auction"),
-            &Error::BidInGam
+            &Error::BidInGame => write!(f, "cannot bid during card play"),
+      
