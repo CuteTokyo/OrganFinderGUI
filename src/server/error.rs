@@ -30,4 +30,7 @@ impl fmt::Display for Error {
             &Error::PlayInAuction => write!(f, "cannot play during auction"),
             &Error::BidInGame => write!(f, "cannot bid during card play"),
             &Error::Bid(ref error) => write!(f, "{}", error),
-  
+            &Error::Play(ref error) => write!(f, "{}", error),
+        }
+    }
+}
