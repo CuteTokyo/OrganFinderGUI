@@ -34,3 +34,6 @@ impl fmt::Display for Error {
         }
     }
 }
+
+impl From<bid::BidError> for Error {
+    fn from(err: bid::Bi
