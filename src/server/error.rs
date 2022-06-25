@@ -40,4 +40,6 @@ impl From<bid::BidError> for Error {
         Error::Bid(err)
     }
 }
-impl Fro
+impl From<game::PlayError> for Error {
+    fn from(err: game::PlayError) -> Error {
+ 
