@@ -42,4 +42,6 @@ impl From<bid::BidError> for Error {
 }
 impl From<game::PlayError> for Error {
     fn from(err: game::PlayError) -> Error {
- 
+        Error::Play(err)
+    }
+}
