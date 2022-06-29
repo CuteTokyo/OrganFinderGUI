@@ -10,4 +10,8 @@ use eventual::{Future, Complete, Async};
 
 use libcoinche::{bid, cards, pos, game, trick};
 use {Event, EventType, PlayerEvent};
-use {NewPartyIn
+use {NewPartyInfo, ContractBody, CardBody};
+
+use super::error::Error;
+
+use 
