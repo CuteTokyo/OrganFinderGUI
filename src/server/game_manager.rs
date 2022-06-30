@@ -14,4 +14,6 @@ use {NewPartyInfo, ContractBody, CardBody};
 
 use super::error::Error;
 
-use 
+use self::FutureResult::{Ready, Waiting};
+
+enum FutureResult<T: Send + 'static> 
