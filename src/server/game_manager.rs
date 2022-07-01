@@ -16,4 +16,9 @@ use super::error::Error;
 
 use self::FutureResult::{Ready, Waiting};
 
-enum FutureResult<T: Send + 'static> 
+enum FutureResult<T: Send + 'static> {
+    Ready(T),
+    Waiting(Future<T, ()>),
+}
+
+type WaitResult = 
