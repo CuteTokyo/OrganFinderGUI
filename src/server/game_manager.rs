@@ -21,4 +21,5 @@ enum FutureResult<T: Send + 'static> {
     Waiting(Future<T, ()>),
 }
 
-type WaitResult = 
+type WaitResult = FutureResult<Event>;
+type JoinResult = FutureResult<NewP
