@@ -22,4 +22,9 @@ enum FutureResult<T: Send + 'static> {
 }
 
 type WaitResult = FutureResult<Event>;
-type JoinResult = FutureResult<NewP
+type JoinResult = FutureResult<NewPartyInfo>;
+
+pub type ManagerResult<T> = Result<T, Error>;
+
+
+/// Base
