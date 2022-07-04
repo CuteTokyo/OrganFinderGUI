@@ -27,4 +27,6 @@ type JoinResult = FutureResult<NewPartyInfo>;
 pub type ManagerResult<T> = Result<T, Error>;
 
 
-/// Base
+/// Base class for managing matchmaking.
+///
+/// It is the main entry point for the
