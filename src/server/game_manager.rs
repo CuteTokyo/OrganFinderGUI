@@ -29,4 +29,6 @@ pub type ManagerResult<T> = Result<T, Error>;
 
 /// Base class for managing matchmaking.
 ///
-/// It is the main entry point for the
+/// It is the main entry point for the server API.
+/// It offers a thread-safe access to various actions.
+pub str
