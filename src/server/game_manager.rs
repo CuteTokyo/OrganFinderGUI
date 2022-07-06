@@ -31,4 +31,7 @@ pub type ManagerResult<T> = Result<T, Error>;
 ///
 /// It is the main entry point for the server API.
 /// It offers a thread-safe access to various actions.
-pub str
+pub struct GameManager {
+    party_list: RwLock<PlayerList>,
+
+    waitin
