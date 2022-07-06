@@ -34,4 +34,7 @@ pub type ManagerResult<T> = Result<T, Error>;
 pub struct GameManager {
     party_list: RwLock<PlayerList>,
 
-    waitin
+    waiting_list: Mutex<Vec<Complete<NewPartyInfo, ()>>>,
+}
+
+/// De
