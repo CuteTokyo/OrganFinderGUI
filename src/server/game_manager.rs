@@ -37,4 +37,6 @@ pub struct GameManager {
     waiting_list: Mutex<Vec<Complete<NewPartyInfo, ()>>>,
 }
 
-/// De
+/// Describe a single game.
+pub enum Game {
+    /// The game is still 
