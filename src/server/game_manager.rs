@@ -39,4 +39,6 @@ pub struct GameManager {
 
 /// Describe a single game.
 pub enum Game {
-    /// The game is still 
+    /// The game is still in the auction phase
+    Bidding(bid::Auction),
+    /// The 
