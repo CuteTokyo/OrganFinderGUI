@@ -41,4 +41,8 @@ pub struct GameManager {
 pub enum Game {
     /// The game is still in the auction phase
     Bidding(bid::Auction),
-    /// The 
+    /// The game is in the main playing phase
+    Playing(game::GameState),
+}
+
+impl Gam
