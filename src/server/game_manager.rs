@@ -45,4 +45,6 @@ pub enum Game {
     Playing(game::GameState),
 }
 
-impl Gam
+impl Game {
+    fn next_player(&self) -> pos::PlayerPos {
+        ma
