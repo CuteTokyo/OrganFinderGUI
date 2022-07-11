@@ -47,4 +47,5 @@ pub enum Game {
 
 impl Game {
     fn next_player(&self) -> pos::PlayerPos {
-        ma
+        match self {
+            &Game::Bidding(ref auction) => auction.ne
