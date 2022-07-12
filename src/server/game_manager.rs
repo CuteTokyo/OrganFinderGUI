@@ -54,4 +54,5 @@ impl Game {
     }
 }
 
-// Creates a new game, starting wi
+// Creates a new game, starting with an auction.
+// Also returns a NewGame Event with the pla
