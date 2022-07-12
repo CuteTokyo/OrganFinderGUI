@@ -49,4 +49,9 @@ impl Game {
     fn next_player(&self) -> pos::PlayerPos {
         match self {
             &Game::Bidding(ref auction) => auction.next_player(),
-            &Game::Playing(ref game) => game.next_player()
+            &Game::Playing(ref game) => game.next_player(),
+        }
+    }
+}
+
+// Creates a new game, starting wi
