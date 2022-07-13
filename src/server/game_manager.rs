@@ -55,4 +55,5 @@ impl Game {
 }
 
 // Creates a new game, starting with an auction.
-// Also returns a NewGame Event with the pla
+// Also returns a NewGame Event with the players cards.
+fn make_game(first: pos::PlayerPos) -> (bid::Auction, EventT
