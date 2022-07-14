@@ -58,4 +58,7 @@ impl Game {
 // Also returns a NewGame Event with the players cards.
 fn make_game(first: pos::PlayerPos) -> (bid::Auction, EventType) {
     let auction = bid::Auction::new(first);
-    let han
+    let hands = auction.hands();
+
+    let event = EventType::NewGame {
+    
