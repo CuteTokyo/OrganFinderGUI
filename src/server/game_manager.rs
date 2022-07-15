@@ -65,4 +65,10 @@ fn make_game(first: pos::PlayerPos) -> (bid::Auction, EventType) {
         hands: hands,
     };
 
-    (auction,
+    (auction, event)
+}
+
+/// Represents a party
+struct Party {
+    game: Game,
+   
