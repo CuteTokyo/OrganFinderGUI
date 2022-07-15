@@ -61,4 +61,8 @@ fn make_game(first: pos::PlayerPos) -> (bid::Auction, EventType) {
     let hands = auction.hands();
 
     let event = EventType::NewGame {
-    
+        first: first,
+        hands: hands,
+    };
+
+    (auction,
