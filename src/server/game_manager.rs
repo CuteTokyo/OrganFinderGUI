@@ -71,4 +71,8 @@ fn make_game(first: pos::PlayerPos) -> (bid::Auction, EventType) {
 /// Represents a party
 struct Party {
     game: Game,
-   
+    first: pos::PlayerPos,
+
+    scores: [i32; 2],
+
+    events:
