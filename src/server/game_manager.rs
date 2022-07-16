@@ -75,4 +75,6 @@ struct Party {
 
     scores: [i32; 2],
 
-    events:
+    events: Vec<EventType>,
+    observers: Mutex<Vec<Complete<Event, ()>>>,
+}
