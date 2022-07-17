@@ -78,3 +78,6 @@ struct Party {
     events: Vec<EventType>,
     observers: Mutex<Vec<Complete<Event, ()>>>,
 }
+
+impl Party {
+    fn new(first: pos::PlayerPos) -
