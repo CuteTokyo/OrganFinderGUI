@@ -82,4 +82,7 @@ struct Party {
 impl Party {
     fn new(first: pos::PlayerPos) -> Self {
         let (auction, event) = make_game(first);
-        Party 
+        Party {
+            first: first,
+            game: Game::Bidding(auction),
+          
