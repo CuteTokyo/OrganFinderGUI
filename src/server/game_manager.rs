@@ -91,4 +91,5 @@ impl Party {
         }
     }
 
-    fn add_event(&
+    fn add_event(&mut self, event: EventType) -> Event {
+        trace!("Adding
