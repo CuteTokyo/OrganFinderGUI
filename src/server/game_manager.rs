@@ -85,4 +85,6 @@ impl Party {
         Party {
             first: first,
             game: Game::Bidding(auction),
+            scores: [0; 2],
+            events: vec![event],
           
