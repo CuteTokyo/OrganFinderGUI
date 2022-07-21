@@ -87,4 +87,8 @@ impl Party {
             game: Game::Bidding(auction),
             scores: [0; 2],
             events: vec![event],
-          
+            observers: Mutex::new(Vec::new()),
+        }
+    }
+
+    fn add_event(&
