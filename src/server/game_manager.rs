@@ -92,4 +92,6 @@ impl Party {
     }
 
     fn add_event(&mut self, event: EventType) -> Event {
-        trace!("Adding
+        trace!("Adding event: {:?}", event);
+        let ev = Event {
+            event: 
