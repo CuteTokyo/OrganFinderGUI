@@ -96,4 +96,5 @@ impl Party {
         let ev = Event {
             event: event.clone(),
             id: self.events.len(),
- 
+        };
+        let mut observers = self.observers.lock().unwrap(
