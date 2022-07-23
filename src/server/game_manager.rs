@@ -97,4 +97,6 @@ impl Party {
             event: event.clone(),
             id: self.events.len(),
         };
-        let mut observers = self.observers.lock().unwrap(
+        let mut observers = self.observers.lock().unwrap();
+        for promise in observers.drain(..) {
+            // 
