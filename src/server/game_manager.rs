@@ -100,4 +100,8 @@ impl Party {
         let mut observers = self.observers.lock().unwrap();
         for promise in observers.drain(..) {
             // TODO: handle cancelled wait?
-            promise.complet
+            promise.complete(ev.clone());
+        }
+        self.events.push(event);
+
+     
