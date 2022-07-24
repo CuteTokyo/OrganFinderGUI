@@ -104,4 +104,7 @@ impl Party {
         }
         self.events.push(event);
 
-     
+        ev
+    }
+
+    fn get_auction_mut(&mut self) -> ManagerResult<&mut b
