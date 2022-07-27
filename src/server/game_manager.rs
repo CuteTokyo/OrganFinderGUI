@@ -107,4 +107,6 @@ impl Party {
         ev
     }
 
-    fn get_auction_mut(&mut self) -> ManagerResult<&mut b
+    fn get_auction_mut(&mut self) -> ManagerResult<&mut bid::Auction> {
+        match self.game {
+            Game::Bidding
