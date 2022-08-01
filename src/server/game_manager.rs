@@ -116,4 +116,5 @@ impl Party {
 
     fn get_game(&self) -> ManagerResult<&game::GameState> {
         match self.game {
-     
+            Game::Bidding(_) => Err(Error::PlayInAuction),
+            Game
