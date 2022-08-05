@@ -121,4 +121,4 @@ impl Party {
         }
     }
 
-    fn get_game_mut
+    fn get_game_mut(&mut self) -> ManagerResult<&mut game::GameState> {
