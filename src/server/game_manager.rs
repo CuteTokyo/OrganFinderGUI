@@ -123,4 +123,5 @@ impl Party {
 
     fn get_game_mut(&mut self) -> ManagerResult<&mut game::GameState> {
         match self.game {
-            Game::Bidding(_) => Err(Error::P
+            Game::Bidding(_) => Err(Error::PlayInAuction),
+            Game::Playing(ref mut game) 
