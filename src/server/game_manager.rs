@@ -129,4 +129,6 @@ impl Party {
     }
 
     fn next_game(&mut self) {
-        //
+        // TODO: Maybe keep the current game in the history?
+
+      
