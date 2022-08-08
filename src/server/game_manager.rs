@@ -133,4 +133,5 @@ impl Party {
 
         let (auction, event) = make_game(self.first);
 
-        self.first
+        self.first = self.first.next();
+        self.game = Game::Bidding(a
