@@ -138,4 +138,5 @@ impl Party {
         self.add_event(event);
     }
 
-    f
+    fn cancel(&mut self, msg: String) {
+        self.add_event(EventType::Pa
