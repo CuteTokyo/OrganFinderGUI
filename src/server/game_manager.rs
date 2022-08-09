@@ -139,4 +139,8 @@ impl Party {
     }
 
     fn cancel(&mut self, msg: String) {
-        self.add_event(EventType::Pa
+        self.add_event(EventType::PartyCancelled(msg));
+    }
+
+    fn bid(&mut self,
+      
