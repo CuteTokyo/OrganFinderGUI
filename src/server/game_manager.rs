@@ -145,4 +145,6 @@ impl Party {
     fn bid(&mut self,
            pos: pos::PlayerPos,
            trump: cards::Suit,
-           
+           target: bid::Target)
+           -> ManagerResult<Event> {
+        t
