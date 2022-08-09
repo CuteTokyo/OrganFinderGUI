@@ -147,4 +147,4 @@ impl Party {
            trump: cards::Suit,
            target: bid::Target)
            -> ManagerResult<Event> {
-        t
+        trace!("Bid from {:?}: {:?} on {:?}", pos, target, t
