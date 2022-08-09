@@ -143,4 +143,6 @@ impl Party {
     }
 
     fn bid(&mut self,
-      
+           pos: pos::PlayerPos,
+           trump: cards::Suit,
+           
