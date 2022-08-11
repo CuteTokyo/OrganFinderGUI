@@ -154,4 +154,5 @@ impl Party {
         };
         trace!("Current state: {:?}", state);
 
-        let event = EventType::FromPlay
+        let event = EventType::FromPlayer(pos, PlayerEvent::Bidded(trump, target));
+        let main_ev
