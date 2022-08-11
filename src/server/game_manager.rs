@@ -150,4 +150,6 @@ impl Party {
         trace!("Bid from {:?}: {:?} on {:?}", pos, target, trump);
         let state = {
             let auction = try!(self.get_auction_mut());
-            try!(auc
+            try!(auction.bid(pos, trump, target))
+        };
+        trace!("Current s
