@@ -149,4 +149,5 @@ impl Party {
            -> ManagerResult<Event> {
         trace!("Bid from {:?}: {:?} on {:?}", pos, target, trump);
         let state = {
-            let 
+            let auction = try!(self.get_auction_mut());
+            try!(auc
