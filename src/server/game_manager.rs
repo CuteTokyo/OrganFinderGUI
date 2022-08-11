@@ -152,4 +152,6 @@ impl Party {
             let auction = try!(self.get_auction_mut());
             try!(auction.bid(pos, trump, target))
         };
-        trace!("Current s
+        trace!("Current state: {:?}", state);
+
+        let event = EventType::FromPlay
