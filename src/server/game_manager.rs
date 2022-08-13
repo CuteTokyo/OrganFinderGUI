@@ -157,4 +157,5 @@ impl Party {
         let event = EventType::FromPlayer(pos, PlayerEvent::Bidded(trump, target));
         let main_event = self.add_event(event);
         match state {
-            bid::A
+            bid::AuctionState::Over => self.complete_auction(),
+            _ => (
