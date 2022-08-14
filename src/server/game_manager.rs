@@ -158,4 +158,10 @@ impl Party {
         let main_event = self.add_event(event);
         match state {
             bid::AuctionState::Over => self.complete_auction(),
-            _ => (
+            _ => (),
+        }
+
+        Ok(main_event)
+    }
+
+    fn pass(&mut se
