@@ -164,4 +164,5 @@ impl Party {
         Ok(main_event)
     }
 
-    fn pass(&mut se
+    fn pass(&mut self, pos: pos::PlayerPos) -> Result<Event, Error> {
+        let state = {
