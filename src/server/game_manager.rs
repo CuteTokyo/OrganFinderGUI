@@ -170,4 +170,5 @@ impl Party {
             try!(auction.pass(pos))
         };
 
-        let main_event = se
+        let main_event = self.add_event(EventType::FromPlayer(pos, PlayerEvent::Passed));
+        mat
