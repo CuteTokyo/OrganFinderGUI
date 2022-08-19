@@ -179,3 +179,8 @@ impl Party {
             }
             _ => (),
         }
+
+        Ok(main_event)
+    }
+
+    fn coinche(&mut self, pos: pos::Playe
