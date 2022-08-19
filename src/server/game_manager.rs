@@ -174,4 +174,5 @@ impl Party {
         match state {
             bid::AuctionState::Over => self.complete_auction(),
             bid::AuctionState::Cancelled => {
- 
+                self.add_event(EventType::BidCancelled);
+                s
