@@ -172,4 +172,6 @@ impl Party {
 
         let main_event = self.add_event(EventType::FromPlayer(pos, PlayerEvent::Passed));
         match state {
-            bid::AuctionState::Over => self.complete_auction
+            bid::AuctionState::Over => self.complete_auction(),
+            bid::AuctionState::Cancelled => {
+ 
