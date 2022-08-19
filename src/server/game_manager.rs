@@ -175,4 +175,7 @@ impl Party {
             bid::AuctionState::Over => self.complete_auction(),
             bid::AuctionState::Cancelled => {
                 self.add_event(EventType::BidCancelled);
-                s
+                self.next_game();
+            }
+            _ => (),
+        }
