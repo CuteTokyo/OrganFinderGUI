@@ -183,4 +183,5 @@ impl Party {
         Ok(main_event)
     }
 
-    fn coinche(&mut self, pos: pos::Playe
+    fn coinche(&mut self, pos: pos::PlayerPos) -> Result<Event, Error> {
+        let state = 
