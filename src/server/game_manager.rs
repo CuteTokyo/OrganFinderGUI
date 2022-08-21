@@ -184,4 +184,6 @@ impl Party {
     }
 
     fn coinche(&mut self, pos: pos::PlayerPos) -> Result<Event, Error> {
-        let state = 
+        let state = {
+            let auction = try!(self.get_auction_mut());
+          
