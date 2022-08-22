@@ -189,4 +189,5 @@ impl Party {
             try!(auction.coinche(pos))
         };
 
-        let main_event = s
+        let main_event = self.add_event(EventType::FromPlayer(pos, PlayerEvent::Coinched));
+        
