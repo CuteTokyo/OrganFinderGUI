@@ -192,4 +192,10 @@ impl Party {
         let main_event = self.add_event(EventType::FromPlayer(pos, PlayerEvent::Coinched));
         match state {
             bid::AuctionState::Over => self.complete_auction(),
-       
+            _ => (),
+        }
+
+        Ok(main_event)
+    }
+
+    fn compl
