@@ -200,3 +200,5 @@ impl Party {
 
     fn complete_auction(&mut self) {
         let game = match &mut self.game {
+            &mut Game::Playing(_) => unreachable!(),
+     
