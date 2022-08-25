@@ -203,4 +203,7 @@ impl Party {
             &mut Game::Playing(_) => unreachable!(),
             &mut Game::Bidding(ref mut auction) => {
                 match auction.complete() {
-                    Ok(game) => game
+                    Ok(game) => game,
+                    Err(err) => panic!(err),
+                }
+   
