@@ -211,4 +211,7 @@ impl Party {
 
         self.add_event(EventType::BidOver(game.contract().clone()));
 
-        self.game = Game::Playing
+        self.game = Game::Playing(game);
+    }
+
+    fn play_card(&mut self, po
