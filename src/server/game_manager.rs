@@ -214,4 +214,4 @@ impl Party {
         self.game = Game::Playing(game);
     }
 
-    fn play_card(&mut self, po
+    fn play_card(&mut self, pos: pos::PlayerPos, card: cards::Card) -> Result<Event, Erro
