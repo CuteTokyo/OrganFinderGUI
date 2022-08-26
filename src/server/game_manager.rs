@@ -209,4 +209,6 @@ impl Party {
             }
         };
 
-        self.add_event(EventType:
+        self.add_event(EventType::BidOver(game.contract().clone()));
+
+        self.game = Game::Playing
