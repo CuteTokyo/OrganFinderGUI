@@ -206,4 +206,7 @@ impl Party {
                     Ok(game) => game,
                     Err(err) => panic!(err),
                 }
-   
+            }
+        };
+
+        self.add_event(EventType:
