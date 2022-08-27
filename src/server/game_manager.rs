@@ -221,4 +221,5 @@ impl Party {
         };
 
         // This is the main event we want to send.
-   
+        // TODO: Batch event dispatch, and send all those together.
+       
