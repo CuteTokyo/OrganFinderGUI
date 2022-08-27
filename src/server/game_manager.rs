@@ -216,4 +216,5 @@ impl Party {
 
     fn play_card(&mut self, pos: pos::PlayerPos, card: cards::Card) -> Result<Event, Error> {
         let result = {
-            let game = try!(self.get_game
+            let game = try!(self.get_game_mut());
+            try!(game.play_card(pos, card))
