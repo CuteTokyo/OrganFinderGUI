@@ -218,3 +218,7 @@ impl Party {
         let result = {
             let game = try!(self.get_game_mut());
             try!(game.play_card(pos, card))
+        };
+
+        // This is the main event we want to send.
+   
