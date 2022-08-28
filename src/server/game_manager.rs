@@ -222,4 +222,6 @@ impl Party {
 
         // This is the main event we want to send.
         // TODO: Batch event dispatch, and send all those together.
-        let main_event = self.add_event(EventType::FromPlayer(pos, PlayerEvent::Card
+        let main_event = self.add_event(EventType::FromPlayer(pos, PlayerEvent::CardPlayed(card)));
+        match result {
+            game::T
