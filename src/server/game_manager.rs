@@ -225,4 +225,5 @@ impl Party {
         let main_event = self.add_event(EventType::FromPlayer(pos, PlayerEvent::CardPlayed(card)));
         match result {
             game::TrickResult::Nothing => (),
-            game::TrickResult::TrickOver(w
+            game::TrickResult::TrickOver(winner, game_result) => {
+                self.add_event(EventType:
