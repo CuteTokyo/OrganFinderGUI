@@ -229,4 +229,4 @@ impl Party {
                 self.add_event(EventType::TrickOver { winner: winner });
                 match game_result {
                     game::GameResult::Nothing => (),
-    
+                    game::GameResult::GameOver{points, winners, scores}
