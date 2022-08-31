@@ -233,4 +233,5 @@ impl Party {
                         for i in 0..2 {
                             self.scores[i] += scores[i];
                         }
-             
+                        self.add_event(EventType::GameOver {
+                        
