@@ -231,4 +231,6 @@ impl Party {
                     game::GameResult::Nothing => (),
                     game::GameResult::GameOver{points, winners, scores} => {
                         for i in 0..2 {
-                           
+                            self.scores[i] += scores[i];
+                        }
+             
