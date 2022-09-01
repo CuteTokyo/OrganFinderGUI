@@ -234,4 +234,6 @@ impl Party {
                             self.scores[i] += scores[i];
                         }
                         self.add_event(EventType::GameOver {
-                        
+                            points: points,
+                            winner: winners,
+     
