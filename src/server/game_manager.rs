@@ -244,4 +244,8 @@ impl Party {
             }
         }
 
-        Ok(
+        Ok(main_event)
+    }
+}
+
+// Information for a current play
