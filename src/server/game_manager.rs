@@ -236,4 +236,5 @@ impl Party {
                         self.add_event(EventType::GameOver {
                             points: points,
                             winner: winners,
-     
+                            scores: scores,
+                 
