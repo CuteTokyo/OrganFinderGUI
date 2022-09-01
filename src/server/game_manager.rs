@@ -239,4 +239,9 @@ impl Party {
                             scores: scores,
                         });
                         self.next_game();
-     
+                    }
+                }
+            }
+        }
+
+        Ok(
