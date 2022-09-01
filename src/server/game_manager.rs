@@ -237,4 +237,6 @@ impl Party {
                             points: points,
                             winner: winners,
                             scores: scores,
-                 
+                        });
+                        self.next_game();
+     
