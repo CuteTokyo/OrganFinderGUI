@@ -253,4 +253,6 @@ struct PlayerInfo {
     // The party he's playing in
     pub party: Arc<RwLock<Party>>,
     // His position in the table
-    pub p
+    pub pos: pos::PlayerPos,
+    // Last time we received something from him
+    // (to de
