@@ -251,4 +251,6 @@ impl Party {
 // Information for a current player
 struct PlayerInfo {
     // The party he's playing in
-    pub
+    pub party: Arc<RwLock<Party>>,
+    // His position in the table
+    pub p
