@@ -248,4 +248,7 @@ impl Party {
     }
 }
 
-// Information for a current play
+// Information for a current player
+struct PlayerInfo {
+    // The party he's playing in
+    pub
