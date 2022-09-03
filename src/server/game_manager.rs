@@ -260,4 +260,9 @@ struct PlayerInfo {
 }
 
 // Maps player IDs to PlayerInfo
-struct PlayerList
+struct PlayerList {
+    pub player_map: HashMap<u32, PlayerInfo>,
+}
+
+impl PlayerList {
+    
