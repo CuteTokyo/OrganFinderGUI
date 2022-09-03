@@ -255,4 +255,5 @@ struct PlayerInfo {
     // His position in the table
     pub pos: pos::PlayerPos,
     // Last time we received something from him
-    // (to de
+    // (to detect inactivity, and disconnect him)
+    pub last_time: Mutex<tim
