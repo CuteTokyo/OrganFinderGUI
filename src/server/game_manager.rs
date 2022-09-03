@@ -265,4 +265,5 @@ struct PlayerList {
 }
 
 impl PlayerList {
-    
+    fn new() -> PlayerList {
+        PlayerList { player_map: HashMa
