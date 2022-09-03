@@ -256,4 +256,8 @@ struct PlayerInfo {
     pub pos: pos::PlayerPos,
     // Last time we received something from him
     // (to detect inactivity, and disconnect him)
-    pub last_time: Mutex<tim
+    pub last_time: Mutex<time::Tm>,
+}
+
+// Maps player IDs to PlayerInfo
+struct PlayerList
