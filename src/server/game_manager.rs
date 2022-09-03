@@ -266,4 +266,7 @@ struct PlayerList {
 
 impl PlayerList {
     fn new() -> PlayerList {
-        PlayerList { player_map: HashMa
+        PlayerList { player_map: HashMap::new() }
+    }
+
+    fn get_player_info(&self, play
