@@ -271,4 +271,6 @@ impl PlayerList {
 
     fn get_player_info(&self, player_id: u32) -> Result<&PlayerInfo, Error> {
         match self.player_map.get(&player_id) {
-            None => Err(Erro
+            None => Err(Error::BadPlayerId),
+            Some(info) => {
+                // Update 
