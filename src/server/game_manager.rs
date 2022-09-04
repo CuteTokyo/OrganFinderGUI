@@ -269,4 +269,5 @@ impl PlayerList {
         PlayerList { player_map: HashMap::new() }
     }
 
-    fn get_player_info(&self, play
+    fn get_player_info(&self, player_id: u32) -> Result<&PlayerInfo, Error> {
+        match s
