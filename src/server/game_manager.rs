@@ -273,4 +273,5 @@ impl PlayerList {
         match self.player_map.get(&player_id) {
             None => Err(Error::BadPlayerId),
             Some(info) => {
-                // Update 
+                // Update the last active time
+                *info.last_time.lock().u
