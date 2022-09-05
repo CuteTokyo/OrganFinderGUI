@@ -274,4 +274,7 @@ impl PlayerList {
             None => Err(Error::BadPlayerId),
             Some(info) => {
                 // Update the last active time
-                *info.last_time.lock().u
+                *info.last_time.lock().unwrap() = time::now();
+                Ok(info)
+            }
+        }
