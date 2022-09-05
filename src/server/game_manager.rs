@@ -280,4 +280,5 @@ impl PlayerList {
         }
     }
 
-    // Creates 4 random IDs, avoiding clashes with the on
+    // Creates 4 random IDs, avoiding clashes with the ones currently in use.
+    // TODO: if it becomes performance critical, we could
