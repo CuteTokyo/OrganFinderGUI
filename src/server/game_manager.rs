@@ -278,3 +278,6 @@ impl PlayerList {
                 Ok(info)
             }
         }
+    }
+
+    // Creates 4 random IDs, avoiding clashes with the on
