@@ -281,4 +281,6 @@ impl PlayerList {
     }
 
     // Creates 4 random IDs, avoiding clashes with the ones currently in use.
-    // TODO: if it becomes performance critical, we could
+    // TODO: if it becomes performance critical, we could skip the conflict check
+    //       and hope that it won't happen.
+    fn make_
