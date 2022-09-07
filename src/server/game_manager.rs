@@ -288,4 +288,6 @@ impl PlayerList {
         let mut result = [0; 4];
 
         for i in 0..4 {
-      
+            loop {
+                let id = thread_rng().next_u32();
+        
