@@ -290,4 +290,5 @@ impl PlayerList {
         for i in 0..4 {
             loop {
                 let id = thread_rng().next_u32();
-        
+                // println!("New UUID: {}", id);
+                if self.player_map.conta
