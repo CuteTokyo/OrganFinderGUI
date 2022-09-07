@@ -285,4 +285,7 @@ impl PlayerList {
     //       and hope that it won't happen.
     fn make_ids(&self) -> [u32; 4] {
         // Expect self.player_map to be locked
-  
+        let mut result = [0; 4];
+
+        for i in 0..4 {
+      
