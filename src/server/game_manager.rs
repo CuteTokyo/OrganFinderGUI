@@ -291,4 +291,7 @@ impl PlayerList {
             loop {
                 let id = thread_rng().next_u32();
                 // println!("New UUID: {}", id);
-                if self.player_map.conta
+                if self.player_map.contains_key(&id) {
+                    continue;
+                }
+     
