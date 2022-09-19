@@ -294,4 +294,5 @@ impl PlayerList {
                 if self.player_map.contains_key(&id) {
                     continue;
                 }
-     
+                let mut ok = true;
+                for j 
