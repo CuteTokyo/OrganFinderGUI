@@ -295,4 +295,6 @@ impl PlayerList {
                     continue;
                 }
                 let mut ok = true;
-                for j 
+                for j in 0..i {
+                    if result[j] == id {
+                  
