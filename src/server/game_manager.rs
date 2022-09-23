@@ -300,4 +300,6 @@ impl PlayerList {
                         ok = false;
                         break;
                     }
- 
+                }
+                if ok {
+                    result[i] = id;
