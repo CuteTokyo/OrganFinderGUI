@@ -303,3 +303,6 @@ impl PlayerList {
                 }
                 if ok {
                     result[i] = id;
+                    break;
+                }
+           
