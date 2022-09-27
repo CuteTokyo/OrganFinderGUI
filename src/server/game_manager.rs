@@ -314,4 +314,5 @@ impl PlayerList {
     fn remove(&mut self, player_id: u32) -> Result<(), Error> {
         {
             let info = try!(self.get_player_info(player_id));
-            let pos 
+            let pos = info.pos;
+            info.party.write().unwrap().cance
