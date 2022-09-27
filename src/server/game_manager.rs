@@ -311,4 +311,6 @@ impl PlayerList {
         result
     }
 
-    fn remove(&m
+    fn remove(&mut self, player_id: u32) -> Result<(), Error> {
+        {
+            let inf
