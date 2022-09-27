@@ -305,4 +305,10 @@ impl PlayerList {
                     result[i] = id;
                     break;
                 }
-           
+            }
+        }
+
+        result
+    }
+
+    fn remove(&m
