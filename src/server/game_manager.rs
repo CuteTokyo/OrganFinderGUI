@@ -315,4 +315,6 @@ impl PlayerList {
         {
             let info = try!(self.get_player_info(player_id));
             let pos = info.pos;
-            info.party.write().unwrap().cance
+            info.party.write().unwrap().cancel(format!("player left: {}", pos as usize));
+        }
+        self.play
