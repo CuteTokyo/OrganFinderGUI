@@ -317,4 +317,11 @@ impl PlayerList {
             let pos = info.pos;
             info.party.write().unwrap().cancel(format!("player left: {}", pos as usize));
         }
-        self.play
+        self.player_map.remove(&player_id);
+
+        Ok(())
+    }
+}
+
+
+impl GameManag
