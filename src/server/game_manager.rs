@@ -328,4 +328,8 @@ impl GameManager {
     pub fn new() -> GameManager {
         GameManager {
             party_list: RwLock::new(PlayerList::new()),
-           
+            waiting_list: Mutex::new(Vec::new()),
+        }
+    }
+
+    /// Attempts to j
