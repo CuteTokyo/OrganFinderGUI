@@ -324,4 +324,8 @@ impl PlayerList {
 }
 
 
-impl GameManag
+impl GameManager {
+    pub fn new() -> GameManager {
+        GameManager {
+            party_list: RwLock::new(PlayerList::new()),
+           
