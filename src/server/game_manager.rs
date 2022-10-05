@@ -335,3 +335,5 @@ impl GameManager {
     /// Attempts to join a new party. Blocks until a party is available.
     pub fn join(&self) -> ManagerResult<NewPartyInfo> {
         trace!("Join");
+        match self.get_join_result() {
+            // TODO: add a time
