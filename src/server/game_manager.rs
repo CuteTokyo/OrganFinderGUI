@@ -336,4 +336,6 @@ impl GameManager {
     pub fn join(&self) -> ManagerResult<NewPartyInfo> {
         trace!("Join");
         match self.get_join_result() {
-            // TODO: add a time
+            // TODO: add a timeout (max: 20s)
+            // TODO: handle cancelled join?
+            
