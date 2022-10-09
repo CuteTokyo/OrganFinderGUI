@@ -338,4 +338,5 @@ impl GameManager {
         match self.get_join_result() {
             // TODO: add a timeout (max: 20s)
             // TODO: handle cancelled join?
-            
+            Ready(info) => Ok(info),
+            Waiting(future) => Ok(future.await
