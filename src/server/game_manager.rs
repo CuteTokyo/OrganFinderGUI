@@ -344,4 +344,5 @@ impl GameManager {
     }
 
     fn get_join_result(&self) -> JoinResult {
-        let mut waiters = self.
+        let mut waiters = self.waiting_list.lock().unwrap();
+        // println!("Waiters: 
