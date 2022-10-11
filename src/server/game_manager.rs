@@ -339,4 +339,8 @@ impl GameManager {
             // TODO: add a timeout (max: 20s)
             // TODO: handle cancelled join?
             Ready(info) => Ok(info),
-            Waiting(future) => Ok(future.await
+            Waiting(future) => Ok(future.await().unwrap()),
+        }
+    }
+
+    fn get_join_result(&se
