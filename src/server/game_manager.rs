@@ -343,4 +343,5 @@ impl GameManager {
         }
     }
 
-    fn get_join_result(&se
+    fn get_join_result(&self) -> JoinResult {
+        let mut waiters = self.
