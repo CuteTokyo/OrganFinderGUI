@@ -345,4 +345,6 @@ impl GameManager {
 
     fn get_join_result(&self) -> JoinResult {
         let mut waiters = self.waiting_list.lock().unwrap();
-        // println!("Waiters: 
+        // println!("Waiters: {}", waiters.len());
+        if waiters.len() >= 3 {
+         
