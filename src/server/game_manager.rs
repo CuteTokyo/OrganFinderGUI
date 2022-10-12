@@ -351,4 +351,7 @@ impl GameManager {
             let info = self.make_party(vec![
                waiters.pop().unwrap(),
                waiters.pop().unwrap(),
-               waiters.pop().unwrap(
+               waiters.pop().unwrap(),
+            ]);
+            return Ready(info);
+       
