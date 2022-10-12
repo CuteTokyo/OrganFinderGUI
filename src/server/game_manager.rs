@@ -350,4 +350,5 @@ impl GameManager {
             // It's a PARTEY!
             let info = self.make_party(vec![
                waiters.pop().unwrap(),
-               waiter
+               waiters.pop().unwrap(),
+               waiters.pop().unwrap(
