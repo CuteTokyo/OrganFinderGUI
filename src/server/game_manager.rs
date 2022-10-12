@@ -347,4 +347,5 @@ impl GameManager {
         let mut waiters = self.waiting_list.lock().unwrap();
         // println!("Waiters: {}", waiters.len());
         if waiters.len() >= 3 {
-         
+            // It's a PARTEY!
+            let info = self.make_party(vec![
