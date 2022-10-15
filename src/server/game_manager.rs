@@ -354,4 +354,5 @@ impl GameManager {
                waiters.pop().unwrap(),
             ]);
             return Ready(info);
-       
+        } else {
+            let (promise, future) = Future::pair()
