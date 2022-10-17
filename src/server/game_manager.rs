@@ -357,4 +357,8 @@ impl GameManager {
         } else {
             let (promise, future) = Future::pair();
             waiters.push(promise);
-            ret
+            return Waiting(future);
+        }
+    }
+
+    fn make_party(&self, oth
