@@ -361,4 +361,5 @@ impl GameManager {
         }
     }
 
-    fn make_party(&self, oth
+    fn make_party(&self, others: Vec<Complete<NewPartyInfo, ()>>) -> NewPartyInfo {
+      
