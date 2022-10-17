@@ -355,4 +355,6 @@ impl GameManager {
             ]);
             return Ready(info);
         } else {
-            let (promise, future) = Future::pair()
+            let (promise, future) = Future::pair();
+            waiters.push(promise);
+            ret
