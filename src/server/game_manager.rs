@@ -362,4 +362,4 @@ impl GameManager {
     }
 
     fn make_party(&self, others: Vec<Complete<NewPartyInfo, ()>>) -> NewPartyInfo {
-      
+        let mut list = self.party_list.write().unwrap();
