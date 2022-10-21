@@ -367,4 +367,6 @@ impl GameManager {
         // Generate 4 new IDS
         let ids = list.make_ids();
 
-  
+        // println!("IDS: {:?}", ids);
+
+        let party = Arc::
