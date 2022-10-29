@@ -370,4 +370,7 @@ impl GameManager {
         // println!("IDS: {:?}", ids);
 
         let party = Arc::new(RwLock::new(Party::new(pos::PlayerPos::P0)));
-        // Kickstar
+        // Kickstart it with a new game!
+
+        // Prepare the players info
+      
