@@ -376,4 +376,5 @@ impl GameManager {
         for i in 0..4 {
             list.player_map.insert(ids[i],
                                    PlayerInfo {
-                            
+                                       party: party.clone(),
+                                      
