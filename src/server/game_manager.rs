@@ -375,4 +375,5 @@ impl GameManager {
         // Prepare the players info
         for i in 0..4 {
             list.player_map.insert(ids[i],
- 
+                                   PlayerInfo {
+                            
