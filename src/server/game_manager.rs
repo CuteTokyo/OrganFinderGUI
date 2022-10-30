@@ -373,4 +373,6 @@ impl GameManager {
         // Kickstart it with a new game!
 
         // Prepare the players info
-      
+        for i in 0..4 {
+            list.player_map.insert(ids[i],
+ 
