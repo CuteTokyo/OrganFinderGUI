@@ -378,4 +378,5 @@ impl GameManager {
                                    PlayerInfo {
                                        party: party.clone(),
                                        pos: pos::PlayerPos::from_n(i),
-                                    
+                                       last_time: Mutex::new(time::now()),
+                               
