@@ -385,4 +385,5 @@ impl GameManager {
         trace!("Party ready: {:?}", ids);
 
         // Tell everyone. They'll love it.
-        // TODO: 
+        // TODO: handle cancelled channels (?)
+        // println!("Waking th
