@@ -382,4 +382,7 @@ impl GameManager {
                                    });
         }
 
-        trace!("Party ready: {:?}", ids)
+        trace!("Party ready: {:?}", ids);
+
+        // Tell everyone. They'll love it.
+        // TODO: 
