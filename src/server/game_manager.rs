@@ -386,4 +386,6 @@ impl GameManager {
 
         // Tell everyone. They'll love it.
         // TODO: handle cancelled channels (?)
-        // println!("Waking th
+        // println!("Waking them up!");
+        for (i, promise) in others.into_iter().enumerate() {
+  
