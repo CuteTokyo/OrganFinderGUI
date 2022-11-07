@@ -390,4 +390,8 @@ impl GameManager {
         for (i, promise) in others.into_iter().enumerate() {
             promise.complete(NewPartyInfo {
                 player_id: ids[i],
-                player_pos: pos::PlayerPos::fr
+                player_pos: pos::PlayerPos::from_n(i),
+            });
+        }
+
+        // println!("Almost ready!
