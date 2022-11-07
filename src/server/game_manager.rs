@@ -388,4 +388,5 @@ impl GameManager {
         // TODO: handle cancelled channels (?)
         // println!("Waking them up!");
         for (i, promise) in others.into_iter().enumerate() {
-  
+            promise.complete(NewPartyInfo {
+         
