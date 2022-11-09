@@ -394,4 +394,8 @@ impl GameManager {
             });
         }
 
-        // println!("Almost ready!
+        // println!("Almost ready!");
+
+        // Even you, weird 4th dude.
+        NewPartyInfo {
+   
