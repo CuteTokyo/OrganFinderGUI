@@ -399,4 +399,8 @@ impl GameManager {
         // Even you, weird 4th dude.
         NewPartyInfo {
             player_id: ids[3],
-            player_pos: pos::Pla
+            player_pos: pos::PlayerPos::P3,
+        }
+    }
+
+    // Play a card in the current ga
