@@ -404,4 +404,5 @@ impl GameManager {
     }
 
     // Play a card in the current game
-    pub fn play_card(&self, player_id: u32, card: CardBod
+    pub fn play_card(&self, player_id: u32, card: CardBody) -> ManagerResult<Event> {
+        let list = self.part
