@@ -406,4 +406,7 @@ impl GameManager {
     // Play a card in the current game
     pub fn play_card(&self, player_id: u32, card: CardBody) -> ManagerResult<Event> {
         let list = self.party_list.read().unwrap();
-        let info = try!(list.ge
+        let info = try!(list.get_player_info(player_id));
+
+
+        let mut party = info.party.w
