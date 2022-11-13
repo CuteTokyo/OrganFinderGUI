@@ -410,4 +410,8 @@ impl GameManager {
 
 
         let mut party = info.party.write().unwrap();
-        party.play_card(info.pos, card.ca
+        party.play_card(info.pos, card.card)
+
+    }
+
+    pub fn bid(&self, player_id: u32, contr
