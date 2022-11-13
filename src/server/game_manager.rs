@@ -409,4 +409,5 @@ impl GameManager {
         let info = try!(list.get_player_info(player_id));
 
 
-        let mut party = info.party.w
+        let mut party = info.party.write().unwrap();
+        party.play_card(info.pos, card.ca
