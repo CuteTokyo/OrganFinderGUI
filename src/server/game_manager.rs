@@ -419,4 +419,7 @@ impl GameManager {
         let info = try!(list.get_player_info(player_id));
 
         let mut party = info.party.write().unwrap();
-        p
+        party.bid(info.pos, contract.suit, contract.target)
+    }
+
+    pub fn pass(&self, 
