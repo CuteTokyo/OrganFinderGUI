@@ -414,4 +414,5 @@ impl GameManager {
 
     }
 
-    pub fn bid(&self, player_id: u32, contr
+    pub fn bid(&self, player_id: u32, contract: ContractBody) -> ManagerResult<Event> {
+        let list = self.
