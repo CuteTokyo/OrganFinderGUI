@@ -415,4 +415,5 @@ impl GameManager {
     }
 
     pub fn bid(&self, player_id: u32, contract: ContractBody) -> ManagerResult<Event> {
-        let list = self.
+        let list = self.party_list.read().unwrap();
+        let info = try!(list.get_player_info(p
