@@ -422,4 +422,5 @@ impl GameManager {
         party.bid(info.pos, contract.suit, contract.target)
     }
 
-    pub fn pass(&self, 
+    pub fn pass(&self, player_id: u32) -> ManagerResult<Event> {
+        let list = self.party_list.
