@@ -423,4 +423,5 @@ impl GameManager {
     }
 
     pub fn pass(&self, player_id: u32) -> ManagerResult<Event> {
-        let list = self.party_list.
+        let list = self.party_list.read().unwrap();
+        let info = try!(list.get_player_info(play
