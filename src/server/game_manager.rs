@@ -430,4 +430,5 @@ impl GameManager {
         party.pass(info.pos)
     }
 
-    pub fn coinche(&self, pl
+    pub fn coinche(&self, player_id: u32) -> ManagerResult<Event> {
+        let list = sel
