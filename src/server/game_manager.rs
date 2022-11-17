@@ -431,4 +431,5 @@ impl GameManager {
     }
 
     pub fn coinche(&self, player_id: u32) -> ManagerResult<Event> {
-        let list = sel
+        let list = self.party_list.read().unwrap();
+        let info = try!
