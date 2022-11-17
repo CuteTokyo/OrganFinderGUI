@@ -426,4 +426,8 @@ impl GameManager {
         let list = self.party_list.read().unwrap();
         let info = try!(list.get_player_info(player_id));
 
-        let mut party = info.party.write().unwrap(
+        let mut party = info.party.write().unwrap();
+        party.pass(info.pos)
+    }
+
+    pub fn coinche(&self, pl
