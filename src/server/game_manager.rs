@@ -434,4 +434,8 @@ impl GameManager {
         let list = self.party_list.read().unwrap();
         let info = try!(list.get_player_info(player_id));
 
-        let mut party
+        let mut party = info.party.write().unwrap();
+        party.coinche(info.pos)
+    }
+
+  
