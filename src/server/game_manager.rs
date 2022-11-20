@@ -438,4 +438,6 @@ impl GameManager {
         party.coinche(info.pos)
     }
 
-    pub fn see_hand(&self, player_id: u32) -> ManagerResult<cards::Han
+    pub fn see_hand(&self, player_id: u32) -> ManagerResult<cards::Hand> {
+        let list = self.party_list.read().unwrap();
+        let 
