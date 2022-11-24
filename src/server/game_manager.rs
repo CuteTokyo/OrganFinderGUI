@@ -440,4 +440,6 @@ impl GameManager {
 
     pub fn see_hand(&self, player_id: u32) -> ManagerResult<cards::Hand> {
         let list = self.party_list.read().unwrap();
-        let 
+        let info = try!(list.get_player_info(player_id));
+
+        let part
