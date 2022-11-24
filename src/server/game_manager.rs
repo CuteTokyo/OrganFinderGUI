@@ -442,4 +442,6 @@ impl GameManager {
         let list = self.party_list.read().unwrap();
         let info = try!(list.get_player_info(player_id));
 
-        let part
+        let party = info.party.read().unwrap();
+        let hands = match party.game {
+     
