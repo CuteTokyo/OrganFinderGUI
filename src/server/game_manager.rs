@@ -444,4 +444,5 @@ impl GameManager {
 
         let party = info.party.read().unwrap();
         let hands = match party.game {
-     
+            Game::Bidding(ref auction) => auction.hands(),
+   
