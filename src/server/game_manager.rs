@@ -451,4 +451,5 @@ impl GameManager {
         Ok(hands[info.pos as usize])
     }
 
-    pub fn see_trick(
+    pub fn see_trick(&self, player_id: u32) -> ManagerResult<trick::Trick> {
+        let lis
