@@ -448,4 +448,7 @@ impl GameManager {
             Game::Playing(ref game) => game.hands(),
         };
 
-        O
+        Ok(hands[info.pos as usize])
+    }
+
+    pub fn see_trick(
