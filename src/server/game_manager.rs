@@ -452,4 +452,5 @@ impl GameManager {
     }
 
     pub fn see_trick(&self, player_id: u32) -> ManagerResult<trick::Trick> {
-        let lis
+        let list = self.party_list.read().unwrap();
+        let info = try!(list.get_player
