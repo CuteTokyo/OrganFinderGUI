@@ -457,4 +457,7 @@ impl GameManager {
 
         let party = info.party.read().unwrap();
         let game = try!(party.get_game());
-        Ok(game.current_trick()
+        Ok(game.current_trick().clone())
+    }
+
+    pub fn see_last_trick(&self, player_id: u32)
