@@ -460,4 +460,5 @@ impl GameManager {
         Ok(game.current_trick().clone())
     }
 
-    pub fn see_last_trick(&self, player_id: u32)
+    pub fn see_last_trick(&self, player_id: u32) -> ManagerResult<trick::Trick> {
+        let list = self.party_lis
