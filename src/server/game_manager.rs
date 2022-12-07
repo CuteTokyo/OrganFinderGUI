@@ -464,4 +464,6 @@ impl GameManager {
         let list = self.party_list.read().unwrap();
         let info = try!(list.get_player_info(player_id));
 
-        let party = info.party.read().unwrap(
+        let party = info.party.read().unwrap();
+        let game = try!(party.get_game());
+        let trick = try!(g
