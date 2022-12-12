@@ -466,4 +466,8 @@ impl GameManager {
 
         let party = info.party.read().unwrap();
         let game = try!(party.get_game());
-        let trick = try!(g
+        let trick = try!(game.last_trick());
+        Ok(trick.clone())
+    }
+
+    p
