@@ -470,4 +470,4 @@ impl GameManager {
         Ok(trick.clone())
     }
 
-    p
+    pub fn see_scores(&self, player_id: u32) -> ManagerResult<[i32
