@@ -478,4 +478,5 @@ impl GameManager {
         Ok(party.scores)
     }
 
-    pub f
+    pub fn see_pos(&self, player_id: u32) -> ManagerResult<pos::PlayerPos> {
+ 
