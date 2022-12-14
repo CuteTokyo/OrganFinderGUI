@@ -474,4 +474,8 @@ impl GameManager {
         let list = self.party_list.read().unwrap();
         let info = try!(list.get_player_info(player_id));
 
-        let party = in
+        let party = info.party.read().unwrap();
+        Ok(party.scores)
+    }
+
+    pub f
