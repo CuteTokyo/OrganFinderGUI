@@ -479,4 +479,5 @@ impl GameManager {
     }
 
     pub fn see_pos(&self, player_id: u32) -> ManagerResult<pos::PlayerPos> {
- 
+        let list = self.party_list.read().unwrap();
+        let info = try!(l
