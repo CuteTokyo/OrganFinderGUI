@@ -472,4 +472,6 @@ impl GameManager {
 
     pub fn see_scores(&self, player_id: u32) -> ManagerResult<[i32; 2]> {
         let list = self.party_list.read().unwrap();
-        l
+        let info = try!(list.get_player_info(player_id));
+
+        let party = in
