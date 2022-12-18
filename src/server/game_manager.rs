@@ -486,4 +486,6 @@ impl GameManager {
 
     // TODO: auto-leave players after long inactivity
     pub fn leave(&self, player_id: u32) -> ManagerResult<()> {
-        l
+        let mut list = self.party_list.write().unwrap();
+
+        tr
