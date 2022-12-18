@@ -488,4 +488,6 @@ impl GameManager {
     pub fn leave(&self, player_id: u32) -> ManagerResult<()> {
         let mut list = self.party_list.write().unwrap();
 
-        tr
+        trace!("Player leaving: {}", player_id);
+
+        try!(list.remove(player_i
