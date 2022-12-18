@@ -482,4 +482,6 @@ impl GameManager {
         let list = self.party_list.read().unwrap();
         let info = try!(list.get_player_info(player_id));
         Ok(info.pos)
-    
+    }
+
+    // TODO: auto-leave players after long inactiv
