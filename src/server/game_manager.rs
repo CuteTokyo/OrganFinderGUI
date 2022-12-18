@@ -484,4 +484,6 @@ impl GameManager {
         Ok(info.pos)
     }
 
-    // TODO: auto-leave players after long inactiv
+    // TODO: auto-leave players after long inactivity
+    pub fn leave(&self, player_id: u32) -> ManagerResult<()> {
+        l
