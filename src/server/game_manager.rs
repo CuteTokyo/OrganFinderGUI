@@ -490,4 +490,9 @@ impl GameManager {
 
         trace!("Player leaving: {}", player_id);
 
-        try!(list.remove(player_i
+        try!(list.remove(player_id));
+
+        Ok(())
+    }
+
+    // Waits until the given event_i
