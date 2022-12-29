@@ -495,4 +495,5 @@ impl GameManager {
         Ok(())
     }
 
-    // Waits until the given event_i
+    // Waits until the given event_id happens
+    pub fn wait(&self, player_id: u32, event_id: usize
