@@ -496,4 +496,5 @@ impl GameManager {
     }
 
     // Waits until the given event_id happens
-    pub fn wait(&self, player_id: u32, event_id: usize
+    pub fn wait(&self, player_id: u32, event_id: usize) -> ManagerResult<Event> {
+        let res = try!(sel
