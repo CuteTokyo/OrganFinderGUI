@@ -497,4 +497,6 @@ impl GameManager {
 
     // Waits until the given event_id happens
     pub fn wait(&self, player_id: u32, event_id: usize) -> ManagerResult<Event> {
-        let res = try!(sel
+        let res = try!(self.get_wait_result(player_id, event_id));
+
+        // TODO: add a timeou
