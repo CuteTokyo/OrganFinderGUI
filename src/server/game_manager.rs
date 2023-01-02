@@ -502,4 +502,5 @@ impl GameManager {
         // TODO: add a timeout (~15s?)
 
         match res {
-            Ready(event) => Ok(
+            Ready(event) => Ok(event),
+            // TODO: handle case where
