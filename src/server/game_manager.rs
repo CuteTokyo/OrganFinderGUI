@@ -504,4 +504,5 @@ impl GameManager {
         match res {
             Ready(event) => Ok(event),
             // TODO: handle case where the wait is cancelled
-            // (don't unwrap, ret
+            // (don't unwrap, return an error instead?)
+            Waiting(future) => Ok(future.awai
