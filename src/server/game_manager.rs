@@ -505,4 +505,8 @@ impl GameManager {
             Ready(event) => Ok(event),
             // TODO: handle case where the wait is cancelled
             // (don't unwrap, return an error instead?)
-            Waiting(future) => Ok(future.awai
+            Waiting(future) => Ok(future.await().unwrap()),
+        }
+    }
+
+    // Check if the event ID is already available.
