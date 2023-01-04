@@ -511,4 +511,5 @@ impl GameManager {
 
     // Check if the event ID is already available.
     // If not, returns a channel that will produce it one
-    // day,
+    // day, so that we don't keep the locks while waiting.
+    fn get_wait_res
