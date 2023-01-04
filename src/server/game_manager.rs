@@ -510,3 +510,5 @@ impl GameManager {
     }
 
     // Check if the event ID is already available.
+    // If not, returns a channel that will produce it one
+    // day,
