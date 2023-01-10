@@ -513,4 +513,5 @@ impl GameManager {
     // If not, returns a channel that will produce it one
     // day, so that we don't keep the locks while waiting.
     fn get_wait_result(&self, player_id: u32, event_id: usize) -> ManagerResult<WaitResult> {
-        let list = self.party_list.re
+        let list = self.party_list.read().unwrap();
+        let info = try!(list.get_pla
