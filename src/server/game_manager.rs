@@ -512,4 +512,5 @@ impl GameManager {
     // Check if the event ID is already available.
     // If not, returns a channel that will produce it one
     // day, so that we don't keep the locks while waiting.
-    fn get_wait_result(&self, player_id: u32, event_id: usize) -> Manager
+    fn get_wait_result(&self, player_id: u32, event_id: usize) -> ManagerResult<WaitResult> {
+        let list = self.party_list.re
