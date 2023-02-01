@@ -521,3 +521,6 @@ impl GameManager {
         if party.events.len() > event_id {
             return Ok(Ready(Event {
                 event: party.events[event_id].relativize(info.pos),
+                id: event_id,
+            }));
+        } else if e
