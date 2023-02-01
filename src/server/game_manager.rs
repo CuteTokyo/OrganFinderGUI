@@ -523,4 +523,5 @@ impl GameManager {
                 event: party.events[event_id].relativize(info.pos),
                 id: event_id,
             }));
-        } else if e
+        } else if event_id > party.events.len() {
+            // We are too ambitious! On
