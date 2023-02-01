@@ -518,4 +518,6 @@ impl GameManager {
 
         let party = info.party.read().unwrap();
 
-        if party.events.len()
+        if party.events.len() > event_id {
+            return Ok(Ready(Event {
+          
