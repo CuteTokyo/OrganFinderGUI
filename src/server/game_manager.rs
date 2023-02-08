@@ -524,4 +524,6 @@ impl GameManager {
                 id: event_id,
             }));
         } else if event_id > party.events.len() {
-            // We are too ambitious! On
+            // We are too ambitious! One event at a time!
+            return Err(Error::BadEventId);
+      
