@@ -529,4 +529,6 @@ impl GameManager {
         }
 
         // Ok, so we'll have to wait a bit.
-        // 
+        // ... maybe?
+        if info.pos == party.game.next_player() {
+       
