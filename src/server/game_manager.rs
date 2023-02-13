@@ -532,4 +532,5 @@ impl GameManager {
         // ... maybe?
         if info.pos == party.game.next_player() {
             // If we're actually waiting for this guy, tell him!
-       
+            return Ok(Ready(Event {
+                event: Event
