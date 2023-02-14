@@ -535,4 +535,7 @@ impl GameManager {
             return Ok(Ready(Event {
                 event: EventType::YourTurn,
                 id: event_id - 1,
-            }
+            }));
+        }
+
+        let (promise, future) = Future::pair()
