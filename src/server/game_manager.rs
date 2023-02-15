@@ -538,4 +538,7 @@ impl GameManager {
             }));
         }
 
-        let (promise, future) = Future::pair()
+        let (promise, future) = Future::pair();
+        party.observers.lock().unwrap().push(promise);
+
+ 
