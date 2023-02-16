@@ -541,4 +541,6 @@ impl GameManager {
         let (promise, future) = Future::pair();
         party.observers.lock().unwrap().push(promise);
 
- 
+        Ok(Waiting(future))
+    }
+}
