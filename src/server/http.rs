@@ -86,3 +86,74 @@ fn help_message() -> String {
                 href: "/scores/[PLAYER_ID]",
                 method: "GET",
                 help: "Get the current scores.",
+            },
+            HelpAction {
+                href: "/pos/[PLAYER_ID]",
+                method: "GET",
+                help: "Get the player's position on the table.",
+            },
+            HelpAction {
+                href: "/wait/[PLAYER_ID]/[EVENT_ID]",
+                method: "GET",
+                help: "Wait until the next event, or return it if it already happened.",
+            },
+        ],
+    })
+        .unwrap()
+}
+
+
+fn help_resp() -> IronResult<Response> {
+    let content_type: iron::mime::Mime = "application/json".parse::<iron::mime::Mime>().unwrap();
+    return Ok(Response::with((content_type, iron::status::NotFound, help_message())));
+}
+
+fn err_resp<S: ToString>(msg: S) -> IronResult<Response> {
+    let content_type: iron::mime::Mime = "application/json".parse::<iron::mime::Mime>().unwrap();
+
+    return Ok(Response::with((content_type,
+                              iron::status::Ok,
+                              json::encode(&Error { error: msg.to_string() }).unwrap())));
+}
+
+macro_rules! parse_id {
+    ( $name:expr, $value:expr ) => {
+        {
+            match u32::from_str($value) {
+                Ok(id) => id,
+                Err(e) => return err_resp(format!("invalid {} ID: `{}` ({})", $name, $value, e)),
+            }
+        }
+    };
+}
+
+macro_rules! check_len {
+    ( $path:expr, 1 ) => {
+        {
+            if $path.len() != 1 {
+                return err_resp(format!("incorrect parameters (Usage: /{})", $path[0]));
+            }
+        }
+    };
+    ( $path:expr, 2 ) => {
+        {
+            if $path.len() != 2 {
+                return err_resp(format!("incorrect parameters (Usage: /{}/[PID])", $path[0]));
+            }
+        }
+    };
+    ( $path:expr, 3 ) => {
+        {
+            if $path.len() != 3 {
+                return err_resp(format!(
+                        "incorrect parameters (Usage: /{}/[PID]/[EID])",
+                        $path[0]));
+            }
+        }
+    };
+}
+
+macro_rules! my_try {
+    ( $x:expr ) => {
+
+        {
