@@ -157,3 +157,76 @@ macro_rules! my_try {
     ( $x:expr ) => {
 
         {
+            match $x {
+                Err(err) => return err_resp(format!("{}", err)),
+                Ok(thing) => thing,
+            }
+        }
+    };
+}
+
+macro_rules! try_manager {
+    ( $call:expr ) => {
+        json::encode(&my_try!($call)).unwrap()
+    };
+}
+
+macro_rules! read_body {
+    ( $x:expr, $name:expr ) => {
+        {
+            match $x {
+                Ok(Some(thing)) => thing,
+                Ok(None) => return err_resp(format!("body expected: {}", $name)),
+                Err(err) => return err_resp(format!("Error parsing {}: {:?}", $name, err)),
+            }
+        }
+    };
+}
+
+impl iron::Handler for Router {
+    fn handle(&self, req: &mut Request) -> IronResult<Response> {
+        trace!("Router::handle()");
+
+        if req.url.path.is_empty() {
+            // ?!?
+            panic!("Empty request path should never happen.");
+        }
+
+
+        // Weird deref trick to go from &String to &str
+
+        trace!("Building ContentType");
+        let content_type: iron::mime::Mime = "application/json"
+                                                 .parse::<iron::mime::Mime>()
+                                                 .unwrap();
+
+        trace!("Request: {:?}", req);
+        match req.method {
+            iron::method::Options => {
+                let action = &*req.url.path[0];
+                if ["hand", "trick", "last_trick", "scores", "pos"].contains(&action) {
+                    Ok(Response::with((iron::modifiers::Header(iron::headers::Allow(vec![
+                                                   iron::method::Get,
+                                                   iron::method::Options])),
+                                       iron::status::Ok)))
+                } else if ["pass", "coinche", "bid", "play", "join", "leave"].contains(&action) {
+                    Ok(Response::with((iron::modifiers::Header(iron::headers::Allow(vec![
+                                                   iron::method::Post,
+                                                   iron::method::Options])),
+                                       iron::status::Ok)))
+                } else {
+                    help_resp()
+                }
+            }
+            iron::method::Get => {
+                let response = match &*req.url.path[0] {
+                    "wait" => {
+                        check_len!(req.url.path, 3);
+                        let player_id = parse_id!("player", &*req.url.path[1]);
+                        let event_id = parse_id!("event", &*req.url.path[2]) as usize;
+                        // Result is an Event
+                        try_manager!(self.manager.wait(player_id, event_id))
+                    }
+                    "hand" => {
+                        check_len!(req.url.path, 2);
+                        let player_id = parse_id!("player", &*req.url.path[1]);
