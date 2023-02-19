@@ -230,3 +230,65 @@ impl iron::Handler for Router {
                     "hand" => {
                         check_len!(req.url.path, 2);
                         let player_id = parse_id!("player", &*req.url.path[1]);
+                        // Result is a cards::Hand = u32
+                        try_manager!(self.manager.see_hand(player_id))
+                    }
+                    "trick" => {
+                        check_len!(req.url.path, 2);
+                        let player_id = parse_id!("player", &*req.url.path[1]);
+                        // Result is a trick::Trick
+                        try_manager!(self.manager.see_trick(player_id))
+                    }
+                    "last_trick" => {
+                        check_len!(req.url.path, 2);
+                        let player_id = parse_id!("player", &*req.url.path[1]);
+                        // Result is a trick::Trick
+                        try_manager!(self.manager.see_last_trick(player_id))
+                    }
+                    "scores" => {
+                        check_len!(req.url.path, 2);
+                        let player_id = parse_id!("player", &*req.url.path[1]);
+                        // Result is a [i32; 2]
+                        try_manager!(self.manager.see_scores(player_id))
+                    }
+                    "pos" => {
+                        check_len!(req.url.path, 2);
+                        let player_id = parse_id!("player", &*req.url.path[1]);
+                        // Result is a pos::PlayerPos = usize
+                        try_manager!(self.manager.see_pos(player_id))
+                    }
+                    _ => {
+                        trace!("Requesting invalid path: GET {:?}", &req.url.path);
+                        return help_resp();
+                    }
+                };
+
+                Ok(Response::with((content_type, iron::status::Ok, response)))
+
+            }
+            iron::method::Post => {
+                // Read the JSON body
+                // ...
+
+                let response = match &*req.url.path[0] {
+                    "join" => {
+                        check_len!(req.url.path, 1);
+                        // Result is a NewPartyInfo
+                        try_manager!(self.manager.join())
+                    }
+                    "leave" => {
+                        check_len!(req.url.path, 2);
+                        let player_id = parse_id!("player", &*req.url.path[1]);
+                        my_try!(self.manager.leave(player_id));
+                        // Result is a string - but who cares?
+                        r#""ok""#.to_string()
+                    }
+                    "pass" => {
+                        check_len!(req.url.path, 2);
+                        let player_id = parse_id!("player", &*req.url.path[1]);
+                        // Result is an event
+                        try_manager!(self.manager.pass(player_id))
+                    }
+                    "coinche" => {
+                        check_len!(req.url.path, 2);
+                        let player_id = parse_id!("player", &*req.url.path[1]);
