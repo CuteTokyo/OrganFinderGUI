@@ -292,3 +292,65 @@ impl iron::Handler for Router {
                     "coinche" => {
                         check_len!(req.url.path, 2);
                         let player_id = parse_id!("player", &*req.url.path[1]);
+                        // Result is an event
+                        try_manager!(self.manager.coinche(player_id))
+                    }
+                    "bid" => {
+                        trace!("Request: POST /bid");
+                        check_len!(req.url.path, 2);
+                        let player_id = parse_id!("player", &*req.url.path[1]);
+                        trace!("bid from {}", player_id);
+                        // Parse the body
+
+                        let contract = read_body!(req.get::<bodyparser::Struct<ContractBody>>(),
+                                                  "contract");
+                        trace!("Bidding {:?}", contract);
+                        // Result is an event
+                        try_manager!(self.manager.bid(player_id, contract))
+                    }
+                    "play" => {
+                        check_len!(req.url.path, 2);
+                        let player_id = parse_id!("player", &*req.url.path[1]);
+                        // Parse the body
+                        let card = read_body!(req.get::<bodyparser::Struct<CardBody>>(), "card");
+
+                        // Result is an event
+                        try_manager!(self.manager.play_card(player_id, card))
+                    }
+                    _ => {
+                        trace!("Requesting invalid path: POST {:?}", &req.url.path);
+                        return help_resp();
+                    }
+                };
+
+                Ok(Response::with((content_type, iron::status::Ok, response)))
+            }
+            _ => {
+                trace!("Requesting invalid path: {:?} {:?}",
+                       req.method,
+                       &req.url.path);
+                return help_resp();
+            }
+        }
+    }
+}
+
+impl Server {
+    pub fn new(port: u16) -> Server {
+        Server {
+            port: port,
+            manager: Arc::new(GameManager::new()),
+        }
+    }
+
+    pub fn run(self) {
+        let port = self.port;
+        println!("Listening on port {}", port);
+
+        let router = Router { manager: self.manager.clone() };
+
+        Iron::new(router).http(("localhost", port)).unwrap();
+
+
+    }
+}
